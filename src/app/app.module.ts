@@ -8,8 +8,6 @@ import { MainComponent } from './main/main.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';   
 import {MenubarModule} from 'primeng/menubar';
 import { CommonModule } from '@angular/common';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
 
 @NgModule({
   declarations: [
@@ -20,12 +18,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BookingPageComponent
   ],
   imports: [
-    CommonModule,    
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     MenubarModule,
-    AngularFontAwesomeModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
