@@ -8,6 +8,13 @@ import { MainComponent } from './main/main.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';   
 import {MenubarModule} from 'primeng/menubar';
 import { CommonModule } from '@angular/common';
+import { SideIntroComponent } from './side-intro/side-intro.component';
+import {CalendarModule} from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
+import {GalleriaModule} from 'primeng/galleria';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,13 +22,20 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    BookingPageComponent
+    BookingPageComponent,
+    SideIntroComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    HttpClientModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     MenubarModule,
+    CalendarModule,
+    FormsModule,
+    ButtonModule,
+    GalleriaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+h1{
+    font-family: 'Imperial Script', cursive;;
+    padding: 0 70px 0 50px;
+    font-size: 2.7em;
+    color: steelblue;
+}
+
+::ng-deep .p-menubar{
+    background-image:url("/../assets/img/background-img.png") !important;
+    background-size: cover;
+    height: 100px;
+}
+
+::ng-deep .p-element{
+    padding-left: 25x;
+    padding-right: 25px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+::ng-deep .p-menuitem-icon{
+    font-size: 20px;
+}

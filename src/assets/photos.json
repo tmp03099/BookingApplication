@@ -1,0 +1,24 @@
+{
+    "data":[
+        {
+            "previewImageSrc":"assets/img/hotel-side1.jpg",
+            "thumbnailImageSrc":"assets/img/hotel-side2.jpg",
+            "alt":"Description 1"
+        },
+        {
+            "previewImageSrc":"assets/img/hotel-side2.jpg",
+            "thumbnailImageSrc":"assets/img/hotel-side3.webp",
+            "alt":"Description 2"
+        },
+        {
+            "previewImageSrc":"assets/img/hotel-side3.webp",
+            "thumbnailImageSrc":"assets/img/hotel-side4.jpg",
+            "alt":"Description 3"
+        },
+        {
+            "previewImageSrc":"assets/img/hotel-side4.jpg",
+            "thumbnailImageSrc":"assets/img/hotel-side5.jpg",
+            "alt":"Description 4"
+        }
+    ]
+}

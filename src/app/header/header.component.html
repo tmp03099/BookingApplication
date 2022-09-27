@@ -5,12 +5,19 @@
         <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-yellow-500 font-bold text-gray-900 border-round m-2">List</div>
     </div>
 </div> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+
+
 <div class="grid">
-    <div class="col-12"> 
-        <img class="background-img" src="assets/background-img.jpg" style="width: 100%; max-height:50px; object-fit:fill">
-    </div>
-    <div class="col-12">
-        <p-menubar [model]="items"></p-menubar>  
+    <div class="col-12 menubar">
+        <p-menubar [model]="items">
+            <ng-template pTemplate="start">
+                <h1>La Palace</h1>
+            </ng-template>
+            
+        </p-menubar>  
     </div>
 </div>
   
