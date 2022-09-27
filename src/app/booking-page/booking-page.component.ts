@@ -9,6 +9,8 @@ export class BookingPageComponent implements OnInit {
 
   constructor() { }
 
+  rangeDate: Date[] | undefined;
+
   ngOnInit(): void {
   }
 

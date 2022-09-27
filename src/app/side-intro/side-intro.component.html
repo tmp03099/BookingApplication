@@ -1,26 +1,19 @@
 <div class="grid">
     <div class="col-12">
-        <div class="card">
-            <div class="flex flex-wrap justify-content-center gap-3">
+        <div class="flex flex-wrap justify-content-center gap-3">
+                <div class="p-inputgroup place-input justify-content-center">
+                    <span class="p-inputgroup-addon"><i class="pi pi-car"></i></span>
+                    <input class="input-style" type="text" pInputText placeholder="Going to">         
+                </div>
+                <div class="p-inputgroup room-input justify-content-center">
+                    <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+                    <input class="input-style" type="text" pInputText placeholder="1 Room, 2 Guest">         
+                </div>
+
+                <p-calendar [(ngModel)]="rangeDate" selectionMode="range" [readonlyInput]="true" [showIcon]="true" inputId="icon"></p-calendar>
                 
-                    <div class="p-inputgroup place-input justify-content-center">
-                        <span class="p-inputgroup-addon"><i class="pi pi-car"></i></span>
-                        <input class="input-style" type="text" pInputText placeholder="Going to">         
-                    </div>
-                
-                
-                    <div class="p-inputgroup room-input justify-content-center">
-                        <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
-                        <input class="input-style" type="text" pInputText placeholder="1 Room, 2 Guest">         
-                    </div>
-                
-                
-                    <p-calendar [(ngModel)]="rangeDate" selectionMode="range" [readonlyInput]="true" [showIcon]="true" inputId="icon"></p-calendar>
-               
-                
-                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-info"></button>
-                
-            </div>
+                <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-info"></button>
+            
         </div>
     </div>
     <div class="col-12">
