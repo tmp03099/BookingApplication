@@ -17,15 +17,18 @@ export class HeaderComponent implements OnInit {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        routerLink: 'home'
     },
       {
         label:'Booking',
-        icon: 'pi pi-check-circle'
+        icon: 'pi pi-check-circle',
+        routerLink: 'booking'
       },
       {
         label:"List",
-        icon: 'pi pi-list'
+        icon: 'pi pi-list',
+        routerLink: 'list'
       }
     ];
 

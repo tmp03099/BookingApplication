@@ -15,6 +15,7 @@ import {ButtonModule} from 'primeng/button';
 import {GalleriaModule} from 'primeng/galleria';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HotelListComponent } from './hotel-list/hotel-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     MainComponent,
     BookingPageComponent,
-    SideIntroComponent
+    SideIntroComponent,
+    HotelListComponent
   ],
   imports: [
     BrowserAnimationsModule,
