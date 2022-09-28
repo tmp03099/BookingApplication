@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid justify-content-center">
     <div class="col-12">
         <div class="flex flex-wrap justify-content-center gap-3">
                 <div class="p-inputgroup place-input justify-content-center">
@@ -16,15 +16,15 @@
             
         </div>
     </div>
-    <div class="col-12">
-        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="5" [circular]="true"
-        [autoPlay]="true" [transitionInterval]="2000"> 
+    <div class="col-fix">
+        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="4" [circular]="true"
+        [autoPlay]="true" [transitionInterval]="2500"> 
             <ng-template pTemplate="item" let-item>
                 <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
             </ng-template>
             <ng-template pTemplate="thumbnail" let-item>
                 <div class="grid grid-nogutter justify-content-center">
-                    <img [src]="item.thumbnailImageSrc" style="display: block;"  />
+                    <img [src]="item.thumbnailImageSrc" style="display: block; width: 120px; height: 60px; padding:0 10px 0 10px;"  />
                 </div>
             </ng-template>
         </p-galleria>
