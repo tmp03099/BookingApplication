@@ -16,6 +16,8 @@ import {GalleriaModule} from 'primeng/galleria';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
+import {TableModule} from 'primeng/table';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { HotelListComponent } from './hotel-list/hotel-list.component';
     HotelListComponent
   ],
   imports: [
+    InputNumberModule,
+    TableModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,

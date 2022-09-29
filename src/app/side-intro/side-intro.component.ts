@@ -8,6 +8,12 @@ import { PhotoService } from '../Service/PhotoService';
 })
 export class SideIntroComponent implements OnInit {
 
+  value1: number = 2;
+
+  value2: number = 0;
+
+  value3: number = 1;
+
   rangeDate: Date[] | undefined;
 
   images: any[] = [];
