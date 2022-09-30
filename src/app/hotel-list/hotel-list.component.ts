@@ -21,7 +21,7 @@ export class HotelListComponent implements OnInit {
   async ngOnInit(): Promise<void> {
 
     this.products = await this.productService.getProducts();
-    console.log("A");
+    
     console.log(this.products);
   }
 

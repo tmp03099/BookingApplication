@@ -1,0 +1,50 @@
+.app-footer{
+    background-image:url("/../assets/img/footer-background.jpg") !important;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.fa-ul{
+    padding: 5px 10px 5px 10px;
+}
+
+li{
+    margin-left: 20px;
+}
+
+.app-left-header{
+    font-size: 34px;
+    font-family: 'Imperial Script';
+    color:white;
+}
+
+.footer-text{
+    color:white;
+    list-style: none;
+    font-size: 15px;
+}
+
+@media screen and (min-width:768px){
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width:992px){
+
+    .app-right-icon{
+        margin-left: 200px;
+    }
+    
+    .app-center-header{
+        margin-left: 50px;
+    }
+    
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+

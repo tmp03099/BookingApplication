@@ -40,12 +40,12 @@
             
         </div>
     </div>
-    <div class="col-fix">
-        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px', 'margin-top':'2em'}" [numVisible]="5"
+    <div class="col-12">
+        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%', 'margin-top':'2em'}" [numVisible]="5"
             [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true"
             [showIndicatorsOnItem]="true"> 
             <ng-template pTemplate="item" let-item>
-                <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+                <img [src]="item.previewImageSrc" style="width: 100%; height:400px; object-fit: cover; display: block;" />
             </ng-template>
             <ng-template pTemplate="thumbnail" let-item>
                 <div class="grid grid-nogutter justify-content-center">
