@@ -1,0 +1,33 @@
+::ng-deep .p-panel .p-panel-header .p-panel-header-icon {
+    width: 3rem;
+    border: 0cm;
+}
+::ng-deep .p-panel .p-panel-header .p-panel-header-icon:enabled:hover{
+   background: none;
+}
+
+::ng-deep .p-panel .p-panel-header .p-panel-header-icon:focus{
+    box-shadow: none;
+ }
+
+::ng-deep .p-panel .p-panel-header{
+    background: none;
+    border: 0cm;
+}
+
+::ng-deep .p-panel .p-panel-content{
+    background: none;
+    border: 0cm;
+}
+
+::ng-deep .p-checkbox-label{
+    font-size: smaller;
+    font-family: serif;
+    font-weight: 500;
+
+}
+
+::ng-deep .p-link:focus{
+    box-shadow: none;
+}
+

@@ -1,0 +1,31 @@
+<div class="grid header">
+    <div class="col-12">
+        <p-panel header="ROOM TYPES" [toggleable]="true">
+            <p-checkbox name="groupname" value="singleVal" label="SINGLE" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="deluxeVal" label="DELUXE" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="familyVal" label="FAMILY" [(ngModel)]="selectedValues"></p-checkbox>
+        </p-panel>
+    </div>
+    <div class="col-12">
+        <p-panel header="BEDDING" [toggleable]="true">
+            <p-checkbox name="groupname" value="queenVal1" label="1 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="queenVal2" label="2 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="queenVal3" label="3 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="kingVal1" label="1 KING BED" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="kingVal2" label="2 KIND BED" [(ngModel)]="selectedValues"></p-checkbox>
+        </p-panel>
+    </div>
+    <div class="col-12">
+        <p-panel header="STATUS" [toggleable]="true">
+            <p-checkbox name="groupname" value="emptyVal" label="EMPTY" [(ngModel)]="selectedValues"></p-checkbox>
+        </p-panel>
+    </div>
+    <div>
+        <button pButton pRipple type="button" label="CANCEL" class="p-button-outlined p-button-secondary"></button>
+    </div>
+    <div>
+        <button pButton pRipple type="button" label="APPLY" class="p-button-outlined p-button-secondary"></button>
+    </div>
+    <button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded p-button-warning p-button-text"></button>
+    
+</div>

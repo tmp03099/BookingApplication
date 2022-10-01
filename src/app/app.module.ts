@@ -18,6 +18,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import {TableModule} from 'primeng/table';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import { FilterComponent } from './filter/filter.component';
+import {PanelModule} from 'primeng/panel';
+import {CheckboxModule} from 'primeng/checkbox';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -27,9 +32,13 @@ import {InputNumberModule} from 'primeng/inputnumber';
     MainComponent,
     BookingPageComponent,
     SideIntroComponent,
-    HotelListComponent
+    HotelListComponent,
+    FilterComponent
   ],
   imports: [
+    CheckboxModule,
+    PanelModule,
+    SplitButtonModule,
     InputNumberModule,
     TableModule,
     BrowserAnimationsModule,
@@ -41,7 +50,8 @@ import {InputNumberModule} from 'primeng/inputnumber';
     CalendarModule,
     FormsModule,
     ButtonModule,
-    GalleriaModule
+    GalleriaModule,
+    OverlayPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

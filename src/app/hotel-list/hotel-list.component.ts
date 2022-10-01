@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { Product } from '../product';
 import { ProductService } from '../Service/productService';
 
@@ -10,13 +11,8 @@ import { ProductService } from '../Service/productService';
 export class HotelListComponent implements OnInit {
 
   products: Product[] = [];
-
+  
   constructor(private productService: ProductService) { }
-
-  // Create a method to retrieve the product from the service.
-  // getProduct():void{
-  //   this.products =this.productService.getProduct();
-  // }
 
   async ngOnInit(): Promise<void> {
 
