@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Product } from '../product';
+import { Product } from '../interface/product';
 import { ProductService } from '../Service/productService';
 
 @Component({

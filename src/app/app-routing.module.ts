@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
 
   {path: 'home', component: MainComponent},
-  {path: 'booking', component: FilterComponent},
+  {path: 'booking', component: BookingPageComponent},
   {path: 'list', component: HotelListComponent},
 
   {

@@ -4,4 +4,5 @@ export interface Product {
     peopleNum: number;
     price: number;
     status: string;
-}
+}   
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Observable } from 'rxjs';
+import { FilterProduct } from '../interface/filterProduct';
 
 
 @Component({
@@ -13,14 +15,39 @@ export class FilterComponent implements OnInit {
 
   selectedValues:String[] = [];
 
+  checkedId = [];
+  
+  products: FilterProduct [] = [
+
+    {   
+      id:"A101",
+      label:'SINGLE ROOM',
+      isChecked:false
+    },
+    {
+      id:"A102",
+      label:'DELUXE ROOM',
+      isChecked:false
+    },
+    {
+      id:"A103",
+      label:'FAMILY ROOM',
+      isChecked:false
+    }
+    
+  ]
+
+
 
   constructor() { }
 
   ngOnInit(): void {
 
-
+    
   }
 
 
 
 }
+
+
