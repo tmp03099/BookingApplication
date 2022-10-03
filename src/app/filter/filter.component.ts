@@ -23,17 +23,28 @@ export class FilterComponent implements OnInit {
   //new EventEmitter<FilterProduct>() Tells Angular to create a new event emitter and the data it emits is of type FilterProduct object
   @Output() newFilterEvent = new EventEmitter<FilterProduct>();
 
- 
+  @Output() cancelFilterEvent = new EventEmitter<FilterProduct>();
 
+ 
   constructor() { }
 
   ngOnInit(): void {
-
     
   }
 
+
   handleCancelClicked(){
-    console.log(this.selectedBedding, this.selectedRoom, this.selectedStatus);
+    
+    //Defined filterSelected object types FilterProduct with values
+    const filterCancel: FilterProduct = {
+      roomType: this.selectedRoom,
+      bedding: this.selectedBedding,
+      status: this.selectedStatus
+    };
+
+    //Emit event with the new filterSelected value
+    this.cancelFilterEvent.emit(filterCancel);   
+
   }
 
 
@@ -42,16 +53,14 @@ export class FilterComponent implements OnInit {
     //Defined filterSelected object types FilterProduct with values
     const filterSelected: FilterProduct = {
 
-      romType: this.selectedRoom,
+      roomType: this.selectedRoom,
       bedding: this.selectedBedding,
       status: this.selectedStatus
 
     };
 
     //Emit event with the new filterSelected value
-    this.newFilterEvent.emit(filterSelected);
-
-    
+    this.newFilterEvent.emit(filterSelected);    
   }
   
 

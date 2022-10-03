@@ -2,7 +2,9 @@
     <p-overlayPanel #op>
         <ng-template pTemplate>
             <!-- when newFilterEvent run, applyFilter($event) will run -->
-            <app-filter (newFilterEvent)="applyFilter($event)"></app-filter>
+            <app-filter (newFilterEvent)="applyFilter($event)" (cancelFilterEvent)="cancelFilter($event)">
+
+            </app-filter>
         </ng-template>
     </p-overlayPanel>
 </div>
@@ -16,13 +18,13 @@
         </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th>Room Type</th>
+                <th>ROOM TYPE</th>
                 <!-- <th>Image</th> -->
-                <th>Kind Bed</th>
-                <th>Sleep</th>
-                <th>Price</th>
-                <th>Status</th>
-                <th>Choose</th>
+                <th>KIND BED</th>
+                <th>SLEEP</th>
+                <th>PRICE</th>
+                <th>STATUS</th>
+                <th>BOOKING</th>
                 
             </tr>
         </ng-template>
@@ -35,7 +37,7 @@
                 <td>{{product.price | currency:'USD'}}</td>
                 <!-- <td><p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating></td> -->
                 <td>{{product.status}}</td>
-                <td><button pButton type="button" label="book" class="p-button-raised p-button-rounded"></button></td>
+                <td><button pButton type="button" label="Booking" class="p-button-raised p-button-rounded booking-button"></button></td>
             </tr>
         </ng-template>
     </p-table>

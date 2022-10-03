@@ -1,5 +1,5 @@
 export interface FilterProduct{
-    romType:String[] ;
+    roomType:String[] ;
     bedding: String[];
     status:String[];
     isChecked?: false;
