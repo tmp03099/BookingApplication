@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Product } from '../interface/product';
+import { FilterProduct } from '../interface/FilterProduct.interface';
+import { Product } from '../interface/product.interface';
 import { ProductService } from '../Service/productService';
 
 @Component({
@@ -19,6 +20,12 @@ export class HotelListComponent implements OnInit {
     this.products = await this.productService.getProducts();
     
     console.log(this.products);
+  }
+
+  //applyFilter() from filter component list component
+  applyFilter(newItem: FilterProduct){
+    console.log(newItem);
+
   }
 
 }

@@ -1,7 +1,8 @@
 <div>
     <p-overlayPanel #op>
         <ng-template pTemplate>
-            <app-filter></app-filter>
+            <!-- when newFilterEvent run, applyFilter($event) will run -->
+            <app-filter (newFilterEvent)="applyFilter($event)"></app-filter>
         </ng-template>
     </p-overlayPanel>
 </div>

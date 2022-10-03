@@ -1,62 +1,37 @@
-<!-- <div class="grid header">
+<div class="grid header">
     <div class="col-12">
         <p-panel header="ROOM TYPES" [toggleable]="true">
-            <p-checkbox name="groupname" value="singleVal" label="SINGLE" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="deluxeVal" label="DELUXE" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="familyVal" label="FAMILY" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="singleVal" label="SINGLE" [(ngModel)]="selectedRoom"></p-checkbox>
+            <p-checkbox name="groupname" value="deluxeVal" label="DELUXE" [(ngModel)]="selectedRoom"></p-checkbox>
+            <p-checkbox name="groupname" value="familyVal" label="FAMILY" [(ngModel)]="selectedRoom"></p-checkbox>
         </p-panel>
     </div>
     <div class="col-12">
         <p-panel header="BEDDING" [toggleable]="true">
-            <p-checkbox name="groupname" value="queenVal1" label="1 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="queenVal2" label="2 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="queenVal3" label="3 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="kingVal1" label="1 KING BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="kingVal2" label="2 KIND BED" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="queenVal1" label="1 QUEEN BED" [(ngModel)]="selectedBedding"></p-checkbox>
+            <p-checkbox name="groupname" value="queenVal2" label="2 QUEEN BED" [(ngModel)]="selectedBedding"></p-checkbox>
+            <p-checkbox name="groupname" value="queenVal3" label="3 QUEEN BED" [(ngModel)]="selectedBedding"></p-checkbox>
+            <p-checkbox name="groupname" value="kingVal1" label="1 KING BED" [(ngModel)]="selectedBedding"></p-checkbox>
+            <p-checkbox name="groupname" value="kingVal2" label="2 KIND BED" [(ngModel)]="selectedBedding"></p-checkbox>
         </p-panel>
     </div>
     <div class="col-12">
         <p-panel header="STATUS" [toggleable]="true">
-            <p-checkbox name="groupname" value="emptyVal" label="EMPTY" [(ngModel)]="selectedValues"></p-checkbox>
+            <p-checkbox name="groupname" value="emptyVal" label="EMPTY" [(ngModel)]="selectedStatus"></p-checkbox>
         </p-panel>
     </div>
-    <div class="apply-button">
-        <button pButton pRipple type="button" label="CANCEL" class="p-button-outlined p-button-secondary"></button>
+    <div class="select-button">
+        <button pButton pRipple type="button" label="CANCEL" class="p-button-outlined p-button-secondary" (click)="handleCancelClicked()"></button>
     </div>
-    <div class="apply-button">
-        <button pButton pRipple type="button" label="APPLY" class="p-button-outlined p-button-secondary"></button>
+    <div class="select-button">
+        <button pButton pRipple type="button" label="APPLY" class="p-button-outlined p-button-secondary" (click)="handleApplyClicked()"></button>
     </div>
     <button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded p-button-warning"></button>
-</div> -->
-<div class="grid header">
-        <p-panel header="ROOM TYPES" [toggleable]="true">
+</div>
+
+        <!-- <p-panel header="ROOM TYPES" [toggleable]="true">
             <div *ngFor="let name of products" class="col-12">
                 <input type="checkbox" name="roomType" [(ngModel)]="name.isChecked">
                 {{name.label}}
             </div>
-        </p-panel>
-
-   
-    
-    <div class="col-12">
-        <p-panel header="BEDDING" [toggleable]="true">
-            <p-checkbox name="groupname" value="queenVal1" label="1 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="queenVal2" label="2 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="queenVal3" label="3 QUEEN BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="kingVal1" label="1 KING BED" [(ngModel)]="selectedValues"></p-checkbox>
-            <p-checkbox name="groupname" value="kingVal2" label="2 KIND BED" [(ngModel)]="selectedValues"></p-checkbox>
-        </p-panel>
-    </div>
-    <div class="col-12">
-        <p-panel header="STATUS" [toggleable]="true">
-            <p-checkbox name="groupname" value="emptyVal" label="EMPTY" [(ngModel)]="selectedValues"></p-checkbox>
-        </p-panel>
-    </div>
-    <div class="apply-button">
-        <button pButton pRipple type="button" label="CANCEL" class="p-button-outlined p-button-secondary"></button>
-    </div>
-    <div class="apply-button">
-        <button pButton pRipple type="button" label="APPLY" class="p-button-outlined p-button-secondary"></button>
-    </div>
-    <button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded p-button-warning"></button>
-</div>
+        </p-panel> -->

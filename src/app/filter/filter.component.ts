@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Observable } from 'rxjs';
-import { FilterProduct } from '../interface/filterProduct';
+import { FilterProduct } from '../interface/FilterProduct.interface';
+import { Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -13,31 +13,17 @@ export class FilterComponent implements OnInit {
 
   items: MenuItem[] =[];
 
-  selectedValues:String[] = [];
+  selectedRoom:String[] = [];
 
-  checkedId = [];
-  
-  products: FilterProduct [] = [
+  selectedBedding:String[] = [];
 
-    {   
-      id:"A101",
-      label:'SINGLE ROOM',
-      isChecked:false
-    },
-    {
-      id:"A102",
-      label:'DELUXE ROOM',
-      isChecked:false
-    },
-    {
-      id:"A103",
-      label:'FAMILY ROOM',
-      isChecked:false
-    }
-    
-  ]
+  selectedStatus:String[] = [];
 
+  //Create a newFilterEvent output name has EventEmitter type 
+  //new EventEmitter<FilterProduct>() Tells Angular to create a new event emitter and the data it emits is of type FilterProduct object
+  @Output() newFilterEvent = new EventEmitter<FilterProduct>();
 
+ 
 
   constructor() { }
 
@@ -45,6 +31,29 @@ export class FilterComponent implements OnInit {
 
     
   }
+
+  handleCancelClicked(){
+    console.log(this.selectedBedding, this.selectedRoom, this.selectedStatus);
+  }
+
+
+  handleApplyClicked(){
+
+    //Defined filterSelected object types FilterProduct with values
+    const filterSelected: FilterProduct = {
+
+      romType: this.selectedRoom,
+      bedding: this.selectedBedding,
+      status: this.selectedStatus
+
+    };
+
+    //Emit event with the new filterSelected value
+    this.newFilterEvent.emit(filterSelected);
+
+    
+  }
+  
 
 
 
