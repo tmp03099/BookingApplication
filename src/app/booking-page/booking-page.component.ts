@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-booking-page',
@@ -9,11 +10,20 @@ export class BookingPageComponent implements OnInit {
 
   constructor() { }
 
+  items: MenuItem[] = [];
+
+
  
 
   rangeDate: Date[] | undefined;
 
   ngOnInit(): void {
+
+    this.items = [
+      {label: 'Searching'},
+      {label: 'Detail Information'},
+      {label: 'Confirmation'}
+  ];
    
 
   }

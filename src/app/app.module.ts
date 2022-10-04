@@ -23,6 +23,7 @@ import { FilterComponent } from './filter/filter.component';
 import {PanelModule} from 'primeng/panel';
 import {CheckboxModule} from 'primeng/checkbox';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {StepsModule} from 'primeng/steps';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {OverlayPanelModule} from 'primeng/overlaypanel';
     FilterComponent
   ],
   imports: [
+    StepsModule,
     CheckboxModule,
     PanelModule,
     SplitButtonModule,
