@@ -24,6 +24,8 @@ import {PanelModule} from 'primeng/panel';
 import {CheckboxModule} from 'primeng/checkbox';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {StepsModule} from 'primeng/steps';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import {StepsModule} from 'primeng/steps';
     FilterComponent
   ],
   imports: [
+
     StepsModule,
     CheckboxModule,
     PanelModule,
@@ -53,7 +56,8 @@ import {StepsModule} from 'primeng/steps';
     FormsModule,
     ButtonModule,
     GalleriaModule,
-    OverlayPanelModule
+    OverlayPanelModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

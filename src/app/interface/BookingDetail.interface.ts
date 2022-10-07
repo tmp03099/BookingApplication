@@ -3,5 +3,4 @@ export interface BookingDetail{
     name: string;
     price: string;
     kind: string;
-    breakfast: string;
 }

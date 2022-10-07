@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UrlHandlingStrategy } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { BookingDetail } from '../interface/BookingDetail.interface';
 
@@ -29,25 +28,22 @@ export class BookingPageComponent implements OnInit {
 
     this.bookingDetail = [
       {
-        img: "/../assets/img/background-img.png",
-        name:"Standard Room 01",
-        price: "$50/night",
-        kind: "sleeps 2",
-        breakfast: "Breakfast"
+        img: "/../assets/img/hotel-side1.jpg",
+        name:"KING ROOM 01",
+        price: "$50/NIGHT",
+        kind: "SLEEPS 2"
       },
       {
         img: "/../assets/img/hotel-side1.jpg",
-        name:"Standard Room 01",
-        price: "$50/night",
-        kind: "sleeps 2",
-        breakfast: "Breakfast"
+        name:"KING ROOM 01",
+        price: "$50/NIGHT",
+        kind: "SLEEPS 2"
       },
       {
         img: "/../assets/img/hotel-side1.jpg",
-        name:"Standard Room 01",
-        price: "$50/night",
-        kind: "sleeps 2",
-        breakfast: "Breakfast"
+        name:"KING ROOM 01",
+        price: "$50/NIGHT",
+        kind: "SLEEPS 2"
       }
     ];
    

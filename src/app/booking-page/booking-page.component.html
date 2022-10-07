@@ -1,43 +1,51 @@
-<div class="grid">
-    <div class="col-12">
-        <p-steps [model]="items"></p-steps>
-    </div>
-    <div class="col-12">
-        <div class="pi pi-calendar">
-
+<!DOCTYPE html>
+<head>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid">
+        <div class="col-12">
+            <p-steps [model]="items"></p-steps>
         </div>
-        <div class="pi pi-users">
-            
+        <div class="col-12">
+            <div class="pi pi-calendar">
+    
+            </div>
+            <div class="pi pi-users">
+                
+            </div>
+            <div class="pi pi-circle">
+                
+            </div>
         </div>
-        <div class="pi pi-circle">
-            
+        <div class="col-12">
+            <h1>
+                SELECT ROOM
+            </h1>
         </div>
-    </div>
-    <div class="col-12">
-        <h1>
-            SELECT ROOM
-        </h1>
-        
-    </div>
-    <div class="col-12">
-        <div class="flex">
-            <div class="col-6" *ngFor="let detail of bookingDetail">
-                <div class="flex hotel-img">{{detail.img}}</div>
-                <div class="flex hotel-info">
-                    <ul class="ul-detail">
-                        <li>{{detail.name}}</li>
-                        <li>{{detail.kind}}</li>
-                        <li>{{detail.price}}</li>
-                    </ul>
-                </div>
+        <div class="col-12 flex flex-row" *ngFor="let detail of bookingDetail">
+            <div class="col-4 img-detail">
+                <img class="w-29rem h-16em" src={{detail.img}}>
             </div>
             <div class="col-6">
-                <div class="">information</div>
-                <div class=""><p-button>Book</p-button></div>
+                <div class="hotel-name">
+                    {{detail.name}}
+                </div>
+                <div class="hotel-price">
+                    {{detail.price}}
+                </div>
+                <div class="flex hotel-info">
+                    <ul class="ul-detail">
+                        <li><i class="fa-solid fa-bed"></i>{{detail.kind}}</li>
+                        <li><i class="fa-solid fa-tv"></i>TV</li>
+                        <li><i class="fa-solid fa-wifi"></i>WIFI</li>
+                    </ul>
+                </div>
+                <div>
+                    <button pButton pRipple type="button" label="BOOK" class="p-button-outlined p-button-rounded p-button-secondary"></button>
+                    <button pButton pRipple type="button" label="ADD TO CART" class="p-button-outlined p-button-rounded p-button-secondary"></button>
+                </div>
             </div>
         </div>
-
-        
     </div>
-
-</div>
+</body>
