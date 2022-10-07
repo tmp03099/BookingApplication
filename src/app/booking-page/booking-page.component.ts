@@ -28,22 +28,39 @@ export class BookingPageComponent implements OnInit {
 
     this.bookingDetail = [
       {
-        img: "/../assets/img/hotel-side1.jpg",
-        name:"KING ROOM 01",
-        price: "$50/NIGHT",
-        kind: "SLEEPS 2"
+        img: "/../assets/img/singleRoom.jpg",
+        name:"LAPALACE STANDARD ROOM",
+        price: "$90/NIGHT",
+        kind: "SLEEPS 2",
+        bed: "QUEEN BED"
       },
       {
-        img: "/../assets/img/hotel-side1.jpg",
-        name:"KING ROOM 01",
-        price: "$50/NIGHT",
-        kind: "SLEEPS 2"
+        img: "/../assets/img/deluxeRoom.jpg",
+        name:"LAPALACE DELUXE ROOM",
+        price: "$115/NIGHT",
+        kind: "SLEEPS 2",
+        bed: "QUEEN BED"
       },
       {
-        img: "/../assets/img/hotel-side1.jpg",
-        name:"KING ROOM 01",
-        price: "$50/NIGHT",
-        kind: "SLEEPS 2"
+        img: "/../assets/img/deluxeRoom2.jpg",
+        name:"LAPALACE DELUXE ROOM",
+        price: "$125/NIGHT",
+        kind: "SLEEPS 4",
+        bed: "KING BED"
+      },
+      {
+        img: "/../assets/img/familyRoom.jpg",
+        name:"LAPALACE FAMILY ROOM",
+        price: "$170/NIGHT",
+        kind: "SLEEPS 4",
+        bed: "KING BED"
+      },
+      {
+        img: "/../assets/img/familyRoom2.jpg",
+        name:"LAPALACE FAMILY ROOM",
+        price: "$210/NIGHT",
+        kind: "SLEEPS 6",
+        bed: "QUEEN BED"
       }
     ];
    

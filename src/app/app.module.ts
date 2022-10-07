@@ -25,6 +25,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {StepsModule} from 'primeng/steps';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DetailInformationComponent } from './detail-information/detail-information.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BookingPageComponent,
     SideIntroComponent,
     HotelListComponent,
-    FilterComponent
+    FilterComponent,
+    DetailInformationComponent
   ],
   imports: [
 
