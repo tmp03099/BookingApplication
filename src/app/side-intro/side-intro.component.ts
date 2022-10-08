@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PhotoService } from '../Service/PhotoService';
 
 @Component({
@@ -33,11 +34,18 @@ export class SideIntroComponent implements OnInit {
     }
   ];
 
-  constructor(private photoService: PhotoService) { }
+  constructor(
+    private photoService: PhotoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.photoService.getImages().then((images: any[]) => this.images = images)
       
+  }
+
+  async handleSearchClicked(){
+    await this.router.navigate(['booking']);
   }
 
 }

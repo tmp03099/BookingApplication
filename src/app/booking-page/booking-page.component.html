@@ -1,56 +1,17 @@
-<!DOCTYPE html>
-<head>
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-</head>
 <div class="grid">
     <div class="col-12">
         <p-steps [model]="items"></p-steps>
     </div>
     <div class="col-12">
-        <div class="pi pi-calendar">
-
+        <div class="fa-solid fa-calendar-days">
+            
         </div>
-        <div class="pi pi-users">
+        <div class="fa-solid fa-user-group">
             
         </div>
         <div class="pi pi-circle">
-            
+        
         </div>
     </div>
-    <div class="col-12">
-        <h1>
-            SELECT ROOM
-        </h1>
-    </div>
-    <div class="col-12 lg:flex flex-row justify-content-center" *ngFor="let detail of bookingDetail">
-        <img class="w-29rem h-16em" src={{detail.img}}>
-        <div class="info-detail">
-            <div class="hotel-name">
-                {{detail.name}}
-            </div>
-            <div class="hotel-price">
-                {{detail.price}}
-            </div>
-            <div class="flex hotel-info">
-                <ul class="ul-detail flex flex-row">
-                    <li><i class="fa-solid fa-bed-front"></i>{{detail.bed}}</li>
-                    <li><i class="fa-solid fa-bed"></i>{{detail.kind}}</li>
-                    <li><i class="fa-solid fa-plate-utensils"></i>BREAKFAST</li>
-                    <li><i class="fa-solid fa-tv"></i>TV</li>
-                </ul>
-            </div>
-            <div class="flex hotel-info">
-                <ul class="ul-detail flex flex-row">
-                    <li><i class="fa-solid fa-person-swimming"></i>POOL</li>
-                    <li><i class="fa-solid fa-bath"></i>BATH</li>
-                    <li><i class="fa-solid fa-washing-machine"></i>LAUNDRY</li>
-                    <li><i class="fa-solid fa-square-parking"></i>PARKING</li>
-                </ul>
-            </div>
-            <div>
-                <button pButton pRipple type="button" label="BOOK" class="p-button-outlined p-button-rounded p-button-secondary"></button>
-                <button pButton pRipple type="button" label="ADD TO CART" class="p-button-outlined p-button-rounded p-button-secondary"></button>
-            </div>
-        </div>
-    </div>
+    <router-outlet></router-outlet>
 </div>

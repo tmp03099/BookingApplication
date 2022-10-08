@@ -1,0 +1,36 @@
+.ul-detail {
+    list-style: none;
+    padding-inline-start: 10px;
+    font-size: 15px;
+}
+
+.ul-detail li{
+    margin: 5px 20px 5px 20px;
+}
+
+.ul-detail li i{
+    margin-right: 5px;
+}
+
+.hotel-name{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+.hotel-price{
+    text-align: end;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+}
+
+.info-detail{
+    border: 2px solid gray;
+    padding: 5px 10px 0px 10px;
+}
+
+@media screen and (min-width:768px) {
+    .img-detail{
+        margin: 0 30px 10px 0;
+    }
+    
+}

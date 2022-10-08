@@ -26,6 +26,7 @@ import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {StepsModule} from 'primeng/steps';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailInformationComponent } from './detail-information/detail-information.component';
+import { SearchingPageComponent } from './searching-page/searching-page.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { DetailInformationComponent } from './detail-information/detail-informat
     SideIntroComponent,
     HotelListComponent,
     FilterComponent,
-    DetailInformationComponent
+    DetailInformationComponent,
+    SearchingPageComponent
   ],
   imports: [
 

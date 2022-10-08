@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OverlayPanel } from 'primeng/overlaypanel';
 import { FilterProduct } from '../interface/FilterProduct.interface';
 import { Product } from '../interface/product.interface';
-import { ProductService } from '../Service/productService';
+import { DataService } from '../Service/dataService';
 
 @Component({
   selector: 'app-hotel-list',
@@ -16,7 +16,8 @@ export class HotelListComponent implements OnInit {
   @ViewChild("op") 
   overlayPanel?: OverlayPanel;
 
-  constructor(private productService: ProductService) { }
+  //create constructor prodictService with DataService type
+  constructor(private productService: DataService) { }
 
   async ngOnInit(): Promise<void> {
 
