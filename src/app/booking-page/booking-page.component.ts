@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { BookingDetail } from '../interface/BookingDetail.interface';
 
 @Component({
   selector: 'app-booking-page',
@@ -14,10 +13,7 @@ export class BookingPageComponent implements OnInit {
   items: MenuItem[] = [];
 
   rangeDate: Date[] | undefined;
-
-  bookingDetail: BookingDetail[] = [];
  
-
   ngOnInit(): void {
 
     this.items = [
