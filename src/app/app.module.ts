@@ -24,9 +24,9 @@ import {PanelModule} from 'primeng/panel';
 import {CheckboxModule} from 'primeng/checkbox';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {StepsModule} from 'primeng/steps';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailInformationComponent } from './detail-information/detail-information.component';
 import { SearchingPageComponent } from './searching-page/searching-page.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { SearchingPageComponent } from './searching-page/searching-page.componen
     SearchingPageComponent
   ],
   imports: [
-
+    DropdownModule,
     StepsModule,
     CheckboxModule,
     PanelModule,
@@ -60,8 +60,7 @@ import { SearchingPageComponent } from './searching-page/searching-page.componen
     FormsModule,
     ButtonModule,
     GalleriaModule,
-    OverlayPanelModule,
-    FontAwesomeModule
+    OverlayPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

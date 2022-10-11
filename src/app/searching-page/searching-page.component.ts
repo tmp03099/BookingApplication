@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotelDetail } from '../interface/HotelDetail.interface';
 import { DataService } from '../Service/dataService';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from '../Service/dataService';
 })
 export class SearchingPageComponent implements OnInit {
 
-  bookingDetail: any[] = [];
+  bookingDetail: HotelDetail[] = [];
 
   constructor(
 
@@ -33,43 +34,6 @@ export class SearchingPageComponent implements OnInit {
 
     console.log(this.bookingDetail);
 
-    // this.bookingDetail = [
-    //   {
-    //     img: "/../assets/img/singleRoom.jpg",
-    //     name:"LAPALACE STANDARD ROOM",
-    //     price: "$90/NIGHT",
-    //     kind: "SLEEPS 2",
-    //     bed: "QUEEN BED"
-    //   },
-    //   {
-    //     img: "/../assets/img/deluxeRoom.jpg",
-    //     name:"LAPALACE DELUXE ROOM",
-    //     price: "$115/NIGHT",
-    //     kind: "SLEEPS 2",
-    //     bed: "QUEEN BED"
-    //   },
-    //   {
-    //     img: "/../assets/img/deluxeRoom2.jpg",
-    //     name:"LAPALACE DELUXE ROOM",
-    //     price: "$125/NIGHT",
-    //     kind: "SLEEPS 4",
-    //     bed: "KING BED"
-    //   },
-    //   {
-    //     img: "/../assets/img/familyRoom.jpg",
-    //     name:"LAPALACE FAMILY ROOM",
-    //     price: "$170/NIGHT",
-    //     kind: "SLEEPS 4",
-    //     bed: "KING BED"
-    //   },
-    //   {
-    //     img: "/../assets/img/familyRoom2.jpg",
-    //     name:"LAPALACE FAMILY ROOM",
-    //     price: "$210/NIGHT",
-    //     kind: "SLEEPS 6",
-    //     bed: "QUEEN BED"
-    //   }
-    // ];
   }
 
   //if function return promise type need to add async to call function()

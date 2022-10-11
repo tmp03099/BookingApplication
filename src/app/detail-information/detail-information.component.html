@@ -1,3 +1,114 @@
-<div>
-    {{storeValue.name}}
+<div class="flex flex-column justify-content-center">
+    <div class="flex justify-content-center">
+        <span class="header">
+            YOUR DETAIL
+        </span>
+    </div>
+    <div class="flex flex-column justify-content-center">
+        <div class="flex justify-content-center">
+            <h2>SUMMARY</h2>
+        </div>
+        <div class="flex justify-content-center">
+            <h3>{{storeValue.name}}</h3>
+        </div>
+        <div class="flex justify-content-center">
+            <div class="table-storeValue">
+                <tr>
+                    <th>DATE</th>
+                    <td>a</td>      
+                </tr>
+                <tr>
+                    <th>GUEST</th>
+                    <td>N</td>      
+                </tr>
+                <tr>
+                    <th>ROOM</th>
+                    <td>{{storeValue.kindBed}}</td>      
+                </tr>
+                <tr>
+                    <th>BENEFIT</th>
+                    <td>
+                        <li><i class="fa-solid fa-bowl-food"></i>{{storeValue.breakfast}}</li>
+                        <li><i class="fa-solid fa-tv"></i>{{storeValue.tv}}</li>
+                        <li><i class="fa-solid fa-person-swimming"></i>{{storeValue.pool}}</li>
+                        <li><i class="fa-solid fa-bath"></i>{{storeValue.bath}}</li>
+                        <li><i class="fa-solid fa-shirt"></i>{{storeValue.laundry}}</li>
+                        <li><i class="fa-solid fa-parking"></i>{{storeValue.parking}}</li>
+                    </td>
+                </tr>
+                <tr>
+                    <th>PRICE</th>
+                    <th>$ {{storeValue.price}}/NIGHT</th>
+                </tr>
+                <tr>
+                    <th>TAX</th>
+                    <td>2222</td>
+                </tr>
+                <tr>
+                    <th>TOTAL PRICE</th>
+                    <th>$ ASSDDAS</th>
+                </tr>
+             
+            </div>
+        </div>
+        
+    </div>
+    <div class="grid info-form">
+        <div class="col-12 flex justify-content-center">
+            <h2>RESERVATION INFORMATION</h2>
+        </div>
+        
+        <div class="col-12 lg:col-6 flex flex-column justify-content-center">
+            <div class="flex justify-content-center">
+                <h4> TITLE </h4>
+            </div>
+            <div class="flex justify-content-center">
+                <p-dropdown [options]="titles" [(ngModel)]="selectedTilte" placeholder="CHOOSE TITLE" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+            <h4> FIRST NAME </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> LAST NAME </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> EMAIL </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> COMFIRM EMAIL </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> PHONE NUMBER </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+        </div>
+        <div class="col-12 lg:col-6">
+            <h4> COUNTRY </h4>
+            <p-dropdown [options]="country" [(ngModel)]="selectedCountry"  optionLabel="name"></p-dropdown>
+            
+            <h4> STATE </h4>
+            <div>
+            <p-dropdown [options]="state" [(ngModel)]="selectedState" optionLabel="name"></p-dropdown>
+    
+            </div>
+            <h4> CITY </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> ADDRESS </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+            <h4> ZIP CODE </h4>
+            <div>
+                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            </div>
+    
+        </div>
+    </div>
 </div>
+
