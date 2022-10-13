@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PhotoService } from '../Service/PhotoService';
 
 @Component({
@@ -8,14 +7,6 @@ import { PhotoService } from '../Service/PhotoService';
   styleUrls: ['./side-intro.component.scss']
 })
 export class SideIntroComponent implements OnInit {
-
-  value1: number = 2;
-
-  value2: number = 0;
-
-  value3: number = 1;
-
-  rangeDate: Date[] | undefined;
 
   images: any[] = [];
 
@@ -35,17 +26,15 @@ export class SideIntroComponent implements OnInit {
   ];
 
   constructor(
-    private photoService: PhotoService,
-    private router: Router
+    private photoService: PhotoService
   ) { }
 
   ngOnInit(): void {
+
     this.photoService.getImages().then((images: any[]) => this.images = images)
       
   }
 
-  async handleSearchClicked(){
-    await this.router.navigate(['booking']);
-  }
+  
 
 }

@@ -1,59 +1,15 @@
-<div class="grid justify-content-center">
-    <div class="col-12">
-        <div class="flex flex-wrap justify-content-center gap-3 w-12">
+<div class="justify-content-center">
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%', 'margin-top':'2em'}" [numVisible]="5"
+        [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true"
+        [showIndicatorsOnItem]="true"> 
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 100%; height:400px; object-fit: cover; display: block;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+                <img [src]="item.thumbnailImageSrc" style="display: block;" />
+            </div>
+        </ng-template>
+    </p-galleria>
 
-                <div class="search-container">
-                    <div class="title">CHECK-IN/CHECK-OUT</div>
-                    <div class="input-calendar">
-                        <p-calendar [(ngModel)]="rangeDate" selectionMode="range" [readonlyInput]="true" [showIcon]="true" inputId="icon"></p-calendar>
-                    </div>
-                </div>
-                
-                <div class="search-container justify-content-center">
-                    <div class="title">ADULT</div>
-                    <div class="input-plus">
-                        <p-inputNumber [ngModel]="value1" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
-                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
-                        </p-inputNumber>    
-                    </div>
-                </div>
-
-                <div class="search-container justify-content-center">
-                    <div class="title">CHILD</div>
-                    <div class="input-plus">
-                        <p-inputNumber [ngModel]="value2" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
-                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
-                        </p-inputNumber>      
-                    </div>
-                </div>
-
-                <div class="search-container justify-content-center">
-                    <div class="title">ROOM</div>
-                    <div class="input-plus">
-                        <p-inputNumber [ngModel]="value3" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
-                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
-                        </p-inputNumber>    
-                    </div>
-                </div>
-                <div>
-                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-info search-button" (click)="handleSearchClicked()"></button>
-                </div>
-                
-            
-        </div>
-    </div>
-    <div class="col-12">
-        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%', 'margin-top':'2em'}" [numVisible]="5"
-            [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true"
-            [showIndicatorsOnItem]="true"> 
-            <ng-template pTemplate="item" let-item>
-                <img [src]="item.previewImageSrc" style="width: 100%; height:400px; object-fit: cover; display: block;" />
-            </ng-template>
-            <ng-template pTemplate="thumbnail" let-item>
-                <div class="grid grid-nogutter justify-content-center">
-                    <img [src]="item.thumbnailImageSrc" style="display: block;" />
-                </div>
-            </ng-template>
-        </p-galleria>
-    </div>
 </div>

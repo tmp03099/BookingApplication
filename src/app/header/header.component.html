@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
 
 
-<div class="grid">
+<div class="grid justify-content-center">
     <div class="col-12 menubar">
         <p-menubar [model]="items">
             <ng-template pTemplate="start">
@@ -11,6 +11,49 @@
             </ng-template>
             
         </p-menubar>  
+    </div>
+    <div class="col-12">
+        <div class="flex flex-wrap justify-content-center gap-3 w-12 mb-3 mt-4">
+
+                <div class="search-container">
+                    <div class="title">CHECK-IN/CHECK-OUT</div>
+                    <div class="input-calendar">
+                        <p-calendar [(ngModel)]="rangeDate" selectionMode="range" [readonlyInput]="true" [showIcon]="true" inputId="icon"></p-calendar>
+                    </div>
+                </div>
+                
+                <div class="search-container justify-content-center">
+                    <div class="title">ADULT</div>
+                    <div class="input-plus">
+                        <p-inputNumber [(ngModel)]="adult" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
+                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
+                        </p-inputNumber>    
+                    </div>
+                </div>
+
+                <div class="search-container justify-content-center">
+                    <div class="title">CHILD</div>
+                    <div class="input-plus">
+                        <p-inputNumber [(ngModel)]="child" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
+                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
+                        </p-inputNumber>      
+                    </div>
+                </div>
+
+                <div class="search-container justify-content-center">
+                    <div class="title">ROOM</div>
+                    <div class="input-plus">
+                        <p-inputNumber [(ngModel)]="room" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [step]="1"
+                        decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus">
+                        </p-inputNumber>    
+                    </div>
+                </div>
+                <div>
+                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-info search-button" (click)="handleSearchClicked()"></button>
+                </div>
+                
+            
+        </div>
     </div>
 </div>
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,12 +9,12 @@ import { MenuItem } from 'primeng/api';
 })
 export class BookingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   items: MenuItem[] = [];
 
-  rangeDate: Date[] | undefined;
- 
   ngOnInit(): void {
 
     this.items = [

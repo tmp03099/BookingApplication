@@ -14,3 +14,32 @@ h1{
 ::ng-deep .p-menuitem-icon{
     font-size: 20px;
 }
+
+::ng-deep .p-inputtext{
+    width:50px;
+}
+
+.title{
+    font-size: smaller;
+    font-family: ui-sans-serif;
+    font-weight: 700;
+}
+
+.search-button{
+    margin-top: 15px;
+}
+
+
+@media only screen and (min-width: 600px){
+
+    ::ng-deep .p-calendar{
+        width: 300px;
+    }
+
+   
+}
+
+@media only screen and (min-width: 992px) {
+   
+
+}

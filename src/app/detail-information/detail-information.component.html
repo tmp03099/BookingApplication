@@ -58,53 +58,51 @@
             <h2>RESERVATION INFORMATION</h2>
         </div>
         
-        <div class="col-12 lg:col-6 flex flex-column justify-content-center">
-            <div class="flex justify-content-center">
-                <h4> TITLE </h4>
-            </div>
-            <div class="flex justify-content-center">
+        <div class="col-12 lg:col-6 flex flex-column justify-content-center reservation-form">
+            <h4> TITLE </h4>
+            <div class="input-form">
                 <p-dropdown [options]="titles" [(ngModel)]="selectedTilte" placeholder="CHOOSE TITLE" optionLabel="name" [showClear]="true"></p-dropdown>
             </div>
             <h4> FIRST NAME </h4>
-            <div>
+            <div class="input-form">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> LAST NAME </h4>
-            <div>
+            <div class="input-form">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> EMAIL </h4>
-            <div>
+            <div class="input-form">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> COMFIRM EMAIL </h4>
-            <div>
+            <div class="input-form">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> PHONE NUMBER </h4>
-            <div>
+            <div class="input-form">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
         </div>
-        <div class="col-12 lg:col-6">
+        <div class="col-12 lg:col-6  flex flex-column justify-content-center reservation-form-2">
             <h4> COUNTRY </h4>
-            <p-dropdown [options]="country" [(ngModel)]="selectedCountry"  optionLabel="name"></p-dropdown>
-            
+            <div class="input-form-2">
+                <p-dropdown [options]="country" [(ngModel)]="selectedCountry"  optionLabel="name"></p-dropdown>
+            </div>
             <h4> STATE </h4>
-            <div>
+            <div class="input-form-2">
             <p-dropdown [options]="state" [(ngModel)]="selectedState" optionLabel="name"></p-dropdown>
-    
             </div>
             <h4> CITY </h4>
-            <div>
+            <div class="input-form-2">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> ADDRESS </h4>
-            <div>
+            <div class="input-form-2">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
             <h4> ZIP CODE </h4>
-            <div>
+            <div class="input-form-2">
                 <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
             </div>
     

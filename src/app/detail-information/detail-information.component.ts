@@ -58,9 +58,11 @@ export class DetailInformationComponent implements OnInit {
 
     //get queryParam value from searching component to get id 
     this.route.queryParamMap.subscribe(async (param) => {
+
+      //set id = field id in param
       this.id = param.get('id');
 
-      
+      //get information about new id from List
       this.detailInfo = await this.detailService.getDetailProduct();
 
       //(value)=>{}: inline function
@@ -73,6 +75,8 @@ export class DetailInformationComponent implements OnInit {
         }
         
       });
+
+
 
     });
 
