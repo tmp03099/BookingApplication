@@ -15,11 +15,15 @@
             <div class="table-storeValue">
                 <tr>
                     <th>DATE</th>
-                    <td>a</td>      
+                    <td>{{select['selectedStartDate']}} to {{select['selectedEndDate']}}</td>      
                 </tr>
                 <tr>
                     <th>GUEST</th>
-                    <td>N</td>      
+                    <td>{{guest}}</td>      
+                </tr>
+                <tr>
+                    <th>SLEEP</th>
+                    <td>{{select['selectedRoom']}}</td>      
                 </tr>
                 <tr>
                     <th>ROOM</th>
@@ -38,15 +42,15 @@
                 </tr>
                 <tr>
                     <th>PRICE</th>
-                    <th>$ {{storeValue.price}}/NIGHT</th>
+                    <th>${{storeValue.price}}/NIGHT</th>
                 </tr>
                 <tr>
                     <th>TAX</th>
-                    <td>2222</td>
+                    <th>7%</th>
                 </tr>
                 <tr>
                     <th>TOTAL PRICE</th>
-                    <th>$ ASSDDAS</th>
+                    <th>${{total.toFixed(2)}}</th>
                 </tr>
              
             </div>

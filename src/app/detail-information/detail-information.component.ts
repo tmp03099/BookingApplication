@@ -33,12 +33,20 @@ export class DetailInformationComponent implements OnInit {
 
   selectedState = states;
 
+  select = {};
+
+  guest: number;
+
+  tax: number = 0.07;
+
+  total:number;
+
   constructor(
 
     private route: ActivatedRoute,
     private detailService: DataService
 
-  ) { 
+  ){ 
 
     this.titles = [
       {
@@ -51,12 +59,12 @@ export class DetailInformationComponent implements OnInit {
         name:'MS'
       }
     ]
+}
 
-  }
 
   ngOnInit(): void {
 
-    //get queryParam value from searching component to get id 
+    //get queryParam value from searching component to get id and more
     this.route.queryParamMap.subscribe(async (param) => {
 
       //set id = field id in param
@@ -77,17 +85,28 @@ export class DetailInformationComponent implements OnInit {
       });
 
 
+      //set date,guest,room value in param
+      this.select['selectedStartDate'] = param.get('startDate');
+      this.select['selectedEndDate'] = param.get('endDate');
+      
+      //convert string to number
+      let numAdult = +(this.select['selectedAdult'] = param.get('adult'));
+      let numChild = +(this.select['selectedChild'] = param.get('child'));
+      this.guest = numAdult + numChild;
 
+      this.select['selectedRoom'] = param.get('room');
+
+      //calculate total price
+      let num = +(this.storeValue.price);
+      this.total= (num * this.tax) + num;
+      
     });
 
+    
+    
 
-    console.log(this.id);
+    
   }
-
-
-
- 
-  
 
 
 }

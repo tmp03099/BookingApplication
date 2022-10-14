@@ -60,7 +60,10 @@ export class SearchingPageComponent implements OnInit {
       relativeTo: this.route,
       
       //set queryParams id to send info from searching component to detail component
-      queryParams: {id: item.id }
+      queryParams: {id: item.id },
+      //merge: keep queryParam old and update queryParam 
+      queryParamsHandling:"merge"
+
     });
 
   }
