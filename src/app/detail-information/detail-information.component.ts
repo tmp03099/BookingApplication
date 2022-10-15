@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Countries } from '../interface/Countries.interface';
 import { DataService } from '../Service/dataService';
@@ -46,6 +47,8 @@ export class DetailInformationComponent implements OnInit {
   tax: number = 0.07;
 
   total:number;
+
+  submitted: boolean = false;
 
   constructor(
 
@@ -107,6 +110,41 @@ export class DetailInformationComponent implements OnInit {
       this.total= (num * this.tax) + num;
       
     });
+
+    
+  }
+
+
+
+
+  onSubmit(){
+    this.nameValidate(this.firstNameValue);
+    const keepData = {
+      title:this.selectedTilte,
+      firstname: this.firstNameValue,
+      lastname: this.lastnameValue,
+      email:this.emailValue,
+      confirmEmail: this.confirmEmailValue,
+      phone: this.phoneValue,
+      countryKey: this.selectedCountry,
+      stateKey: this.selectedState,
+      city:this.cityValue,
+      address:this.addressValue,
+      zipCode: this.zipCodeValue
+    }
+    
+  }
+
+  nameValidate(string){
+    const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    
+    if(this.firstNameValue.length<6){
+      return false;
+    }
+    if(format.test(string)){
+      return false;
+    }
+    return true;
   }
 
 

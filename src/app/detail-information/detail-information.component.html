@@ -61,7 +61,6 @@
         <div class="col-12 flex justify-content-center">
             <h2>RESERVATION INFORMATION</h2>
         </div>
-
         <div class="col-9 grid form-group justify-content-center">
             <div class="col-12 lg:col-6 justify-content-center reservation-form">
                 <div class="input-form">
@@ -75,7 +74,6 @@
                                 optionLabel="name">
                     </p-dropdown>
                 </div>
-            
                 <div class="input-form">
                     <label class="flex" for="firstname">FIRST NAME *</label>
                     <input class="flex form-control" id="title"
@@ -94,6 +92,17 @@
                             [(ngModel)]="lastnameValue"
                             [required] = "true">
                     <div [hidden]="lastnameValue.length > 0"
+                            class="alert alert-danger">
+                            Last Name is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="phone">PHONE*</label>
+                    <input class="form-control" id="phone"
+                            type="text"  pInputText
+                            [(ngModel)]="phoneValue"
+                            [required] = "true">
+                    <div [hidden]="phoneValue.length > 0"
                             class="alert alert-danger">
                             Last Name is required
                     </div>
@@ -189,6 +198,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 text-center">
+            <p-button type="button"
+                     (click)="onSubmit()">SUBMIT
+            </p-button>
+        </div>
+        
     </div>
 </div>
 
