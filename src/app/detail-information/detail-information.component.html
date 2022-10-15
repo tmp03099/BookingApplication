@@ -50,66 +50,144 @@
                 </tr>
                 <tr>
                     <th>TOTAL PRICE</th>
-                    <th>${{total.toFixed(2)}}</th>
+                    <th>${{total?.toFixed(2)}}</th>
                 </tr>
              
             </div>
         </div>
         
     </div>
-    <div class="grid info-form">
+    <div class="grid info-form justify-content-center">
         <div class="col-12 flex justify-content-center">
             <h2>RESERVATION INFORMATION</h2>
         </div>
-        
-        <div class="col-12 lg:col-6 flex flex-column justify-content-center reservation-form">
-            <h4> TITLE </h4>
-            <div class="input-form">
-                <p-dropdown [options]="titles" [(ngModel)]="selectedTilte" placeholder="CHOOSE TITLE" optionLabel="name" [showClear]="true"></p-dropdown>
+
+        <div class="col-9 grid form-group justify-content-center">
+            <div class="col-12 lg:col-6 justify-content-center reservation-form">
+                <div class="input-form">
+                    <label class="flex" for="title">TITLE</label>
+                    <p-dropdown class="flex form-control" id="title"
+                                [autoDisplayFirst]="false"
+                                [options]="titles"
+                                [(ngModel)]="selectedTilte"
+                                placeholder="CHOOSE A TITLE"
+                                [showClear]="true"
+                                optionLabel="name">
+                    </p-dropdown>
+                </div>
+            
+                <div class="input-form">
+                    <label class="flex" for="firstname">FIRST NAME *</label>
+                    <input class="flex form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="firstNameValue"
+                            [required] = "true">
+                    <div [hidden]="firstNameValue.length > 0"
+                            class="flex alert alert-danger">
+                            First Name is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="lastname">LAST NAME *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="lastnameValue"
+                            [required] = "true">
+                    <div [hidden]="lastnameValue.length > 0"
+                            class="alert alert-danger">
+                            Last Name is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="email">EMAIL *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="emailValue"
+                            [required] = "true">
+                    <div [hidden]="emailValue.length > 0"
+                            class="alert alert-danger">
+                            Email is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="confirmEmail">CONFIRM EMAIL *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="confirmEmailValue"
+                            [required] = "true">
+                    <div [hidden]="confirmEmailValue.length > 0"
+                            class="alert alert-danger">
+                            Confirm Email is required
+                    </div>
+                    <div [hidden]="confirmEmailValue === emailValue"
+                        class="alert alert-danger">
+                        Confirm Email is not match with your email
+                </div>
+                </div>
             </div>
-            <h4> FIRST NAME </h4>
-            <div class="input-form">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
+            <div class="col-12 lg:col-6 flex flex-column justify-content-center reservation-form">
+                <div class="input-form">
+                    <label for="country">COUNTRY</label>
+                    <p-dropdown class="form-control" id="country"
+                                [autoDisplayFirst]="false"
+                                [(ngModel)]="selectedCountry" 
+                                [options]="country"
+                                optionLabel="name"
+                                [required] = "true">
+                    </p-dropdown>
+                    <div [hidden]="selectedCountry != null"
+                            class="alert alert-danger">
+                            Country is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="state">STATE</label>
+                    <p-dropdown class="form-control" id="state"
+                                [autoDisplayFirst]="false"
+                                [(ngModel)]="selectedState" 
+                                [options]="state"
+                                optionLabel="name"
+                                [required] = "true">
+                    </p-dropdown>
+                    <div [hidden]="selectedState === null"
+                            class="alert alert-danger">
+                            State is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="city">CITY *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="cityValue"
+                            [required] = "true">
+                    <div [hidden]="cityValue.length > 0"
+                            class="alert alert-danger">
+                            City is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="address">ADDRESS *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="addressValue"
+                            [required] = "true">
+                    <div [hidden]="addressValue.length > 0"
+                            class="alert alert-danger">
+                            Address is required
+                    </div>
+                </div>
+                <div class="input-form">
+                    <label for="zipcode">ZIP CODE *</label>
+                    <input class="form-control" id="title"
+                            type="text"  pInputText
+                            [(ngModel)]="zipCodeValue"
+                            [required] = "true">
+                    <div [hidden]="zipCodeValue.length > 0"
+                            class="alert alert-danger">
+                            Zip code is required
+                    </div>
+                </div>
             </div>
-            <h4> LAST NAME </h4>
-            <div class="input-form">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-            <h4> EMAIL </h4>
-            <div class="input-form">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-            <h4> COMFIRM EMAIL </h4>
-            <div class="input-form">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-            <h4> PHONE NUMBER </h4>
-            <div class="input-form">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-        </div>
-        <div class="col-12 lg:col-6  flex flex-column justify-content-center reservation-form-2">
-            <h4> COUNTRY </h4>
-            <div class="input-form-2">
-                <p-dropdown [options]="country" [(ngModel)]="selectedCountry"  optionLabel="name"></p-dropdown>
-            </div>
-            <h4> STATE </h4>
-            <div class="input-form-2">
-            <p-dropdown [options]="state" [(ngModel)]="selectedState" optionLabel="name"></p-dropdown>
-            </div>
-            <h4> CITY </h4>
-            <div class="input-form-2">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-            <h4> ADDRESS </h4>
-            <div class="input-form-2">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-            <h4> ZIP CODE </h4>
-            <div class="input-form-2">
-                <input id="float-input-invalid" type="text" pInputText [(ngModel)]="firstNameValue" class="ng-invalid ng-dirty"> 
-            </div>
-    
         </div>
     </div>
 </div>

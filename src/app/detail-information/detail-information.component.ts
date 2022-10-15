@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { __values } from 'tslib';
 import { Countries } from '../interface/Countries.interface';
 import { DataService } from '../Service/dataService';
 import { countries } from './country-data-store';
@@ -23,16 +22,23 @@ export class DetailInformationComponent implements OnInit {
 
   titles: any[] = [];
 
-  firstNameValue: String = "";
-
   country: Countries[] = countries;
 
-  selectedCountry = countries;
+  selectedCountry: Countries;
 
   state: States[] = states;
 
-  selectedState = states;
+  selectedState: States;
 
+  firstNameValue: String = "";
+  lastnameValue: String = "";
+  emailValue: String = "";
+  confirmEmailValue: String = "";
+  phoneValue: String = "";
+  cityValue: String = "";
+  addressValue: String = "";
+  zipCodeValue: String = "";
+  
   select = {};
 
   guest: number;
@@ -101,12 +107,8 @@ export class DetailInformationComponent implements OnInit {
       this.total= (num * this.tax) + num;
       
     });
-
-    
-    
-
-    
   }
+
 
 
 }

@@ -27,6 +27,7 @@ import {StepsModule} from 'primeng/steps';
 import { DetailInformationComponent } from './detail-information/detail-information.component';
 import { SearchingPageComponent } from './searching-page/searching-page.component';
 import {DropdownModule} from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {DropdownModule} from 'primeng/dropdown';
     SearchingPageComponent
   ],
   imports: [
+    ReactiveFormsModule,
     DropdownModule,
     StepsModule,
     CheckboxModule,
