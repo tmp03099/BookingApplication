@@ -28,6 +28,7 @@ import { DetailInformationComponent } from './detail-information/detail-informat
 import { SearchingPageComponent } from './searching-page/searching-page.component';
 import {DropdownModule} from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HotelListComponent,
     FilterComponent,
     DetailInformationComponent,
-    SearchingPageComponent
+    SearchingPageComponent,
+    ConfirmationPageComponent
   ],
   imports: [
     ReactiveFormsModule,

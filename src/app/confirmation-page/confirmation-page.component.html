@@ -1,0 +1,87 @@
+<div class="grid info-form justify-content-center">
+    <div class="col-12 flex justify-content-center">
+        <h2>PAYMENT DETAIL</h2>
+    </div>
+    <form [formGroup]="creditForm" (ngSubmit)="onSubmit()" class="justify-content-center">
+        <div>
+            <label for="card-holder">CARD HOLDER *</label>
+            <div>
+                <input class="form-control"
+                        type="text"
+                        [required] = "true"
+                        formControlName="name"
+                        [(ngModel)] = "cardHolder">
+            </div>
+            <div [hidden]="cardHolder.length>0"
+                class="alert alert-danger">
+                Zip code is required
+            </div>
+        </div>
+        <div>
+            <label for="card-number">CARD NUMBER *</label>
+            <div>
+                <input class="form-control"
+                        type="text"
+                        [required] = "true"
+                        formControlName="name"
+                        [(ngModel)] = "cardNumber">
+            </div>
+            <div [hidden]="cardNumber.length>0"
+                class="alert alert-danger">
+                Zip code is required
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div>
+                <label for="month">MONTH *</label>
+                <div>
+                    <input class="form-control"
+                            type="text"
+                            [required] = "true"
+                            formControlName="name"
+                            >
+                </div>
+                <div [hidden]=""
+                    class="alert alert-danger">
+                    Zip code is required
+                </div>
+            </div>
+            <div>
+
+                <label for="year">YEAR *</label>
+                <div>
+                    <input class="form-control"
+                            type="text"
+                            [required] = "true"
+                            formControlName="name"
+                            >
+                </div>
+                <div [hidden]=""
+                    class="alert alert-danger">
+                    Zip code is required
+                </div>
+            </div>
+            <div>
+                <label for="cvv">CVV *</label>
+                <div>
+                    <input class="form-control"
+                            type="text"
+                            [required] = "true"
+                            formControlName="name"
+                            >
+                </div>
+                <div [hidden]="cvv>3"
+                    class="alert alert-danger">
+                    Zip code is required
+                </div>
+            </div>
+        </div>
+        <p-button type="button"
+                [disabled]="!creditForm.valid"
+                (click)="onSubmit()">
+            SUBMIT
+        </p-button>
+
+    </form>
+    
+</div>

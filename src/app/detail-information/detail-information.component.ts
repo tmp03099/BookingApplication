@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Countries } from '../interface/Countries.interface';
 import { DataService } from '../Service/dataService';
 import { countries } from './country-data-store';
@@ -32,13 +32,15 @@ export class DetailInformationComponent implements OnInit {
   selectedState: States;
 
   firstNameValue: String = "";
-  lastnameValue: String = "";
+  lastNameValue: String = "";
   emailValue: String = "";
   confirmEmailValue: String = "";
   phoneValue: String = "";
   cityValue: String = "";
   addressValue: String = "";
   zipCodeValue: String = "";
+  
+  firstNameMessage: String;
   
   select = {};
 
@@ -50,9 +52,12 @@ export class DetailInformationComponent implements OnInit {
 
   submitted: boolean = false;
 
+
+
   constructor(
 
     private route: ActivatedRoute,
+    private router: Router,
     private detailService: DataService
 
   ){ 
@@ -115,23 +120,33 @@ export class DetailInformationComponent implements OnInit {
   }
 
 
+  async onSubmit(){
 
-
-  onSubmit(){
-    this.nameValidate(this.firstNameValue);
-    const keepData = {
-      title:this.selectedTilte,
-      firstname: this.firstNameValue,
-      lastname: this.lastnameValue,
-      email:this.emailValue,
-      confirmEmail: this.confirmEmailValue,
-      phone: this.phoneValue,
-      countryKey: this.selectedCountry,
-      stateKey: this.selectedState,
-      city:this.cityValue,
-      address:this.addressValue,
-      zipCode: this.zipCodeValue
+    if(this.nameValidate(this.firstNameValue) == true){
+      if(this.phoneValue.length > 0){
+        if(this.emailValidate()==true){
+          if(this.selectedState != null){
+            if(this.selectedCountry != null){
+              if(this.cityValue.length >0){
+                if(this.addressValue.length > 0){
+                  if(this.zipCodeValue.length>0){
+                    this.submitted = true;
+                    await this.router.navigate(['../confirm'],{
+                      relativeTo: this.route
+                    });
+                    console.log(1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }else{
+      this.submitted = false;
+      console.log(2);
     }
+    
     
   }
 
@@ -139,13 +154,29 @@ export class DetailInformationComponent implements OnInit {
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     
     if(this.firstNameValue.length<6){
+      this.firstNameMessage="First name is required";
       return false;
     }
     if(format.test(string)){
+      this.firstNameMessage="Please enter valid first name  ";
       return false;
     }
+    if(this.lastNameValue.length<6){
+      return false;
+    }
+  
     return true;
   }
+
+  emailValidate(){    
+    if(this.emailValue.indexOf("@") == -1){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+ 
 
 
 

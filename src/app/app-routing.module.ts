@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingPageComponent } from './booking-page/booking-page.component';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { DetailInformationComponent } from './detail-information/detail-information.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { MainComponent } from './main/main.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
     children:[
       {path:'', redirectTo:'searching', pathMatch:'full'},
       {path:'searching', component:SearchingPageComponent},
-      {path:'detail', component:DetailInformationComponent}
+      {path:'detail', component:DetailInformationComponent},
+      {path:'confirm', component: ConfirmationPageComponent}
 
     ]
   },

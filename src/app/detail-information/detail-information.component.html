@@ -76,22 +76,22 @@
                 </div>
                 <div class="input-form">
                     <label class="flex" for="firstname">FIRST NAME *</label>
-                    <input class="flex form-control" id="title"
+                    <input class="form-control" id="title"
                             type="text"  pInputText
                             [(ngModel)]="firstNameValue"
                             [required] = "true">
-                    <div [hidden]="firstNameValue.length > 0"
-                            class="flex alert alert-danger">
-                            First Name is required
+                    <div [hidden]="nameValidate(firstNameValue)"
+                            class="alert alert-danger">
+                            {{firstNameMessage}}
                     </div>
                 </div>
                 <div class="input-form">
                     <label for="lastname">LAST NAME *</label>
                     <input class="form-control" id="title"
                             type="text"  pInputText
-                            [(ngModel)]="lastnameValue"
+                            [(ngModel)]="lastNameValue"
                             [required] = "true">
-                    <div [hidden]="lastnameValue.length > 0"
+                    <div [hidden]="nameValidate(lastNameValue)"
                             class="alert alert-danger">
                             Last Name is required
                     </div>
@@ -113,9 +113,9 @@
                             type="text"  pInputText
                             [(ngModel)]="emailValue"
                             [required] = "true">
-                    <div [hidden]="emailValue.length > 0"
+                    <div [hidden]="emailValidate()"
                             class="alert alert-danger">
-                            Email is required
+                            Please enter valid Email
                     </div>
                 </div>
                 <div class="input-form">
@@ -124,7 +124,7 @@
                             type="text"  pInputText
                             [(ngModel)]="confirmEmailValue"
                             [required] = "true">
-                    <div [hidden]="confirmEmailValue.length > 0"
+                    <div [hidden]="emailValidate()"
                             class="alert alert-danger">
                             Confirm Email is required
                     </div>
@@ -200,7 +200,9 @@
         </div>
         <div class="col-12 text-center">
             <p-button type="button"
-                     (click)="onSubmit()">SUBMIT
+                      [disabled] = "submitted"
+                     (click)="onSubmit()"
+                    >SUBMIT
             </p-button>
         </div>
         
