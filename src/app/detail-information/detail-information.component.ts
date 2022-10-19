@@ -151,7 +151,7 @@ export class DetailInformationComponent implements OnInit {
 
   phoneValidate(num){
 
-    if(num > 999999999999999 || num === 0){
+    if(num > 999999999999999 || num == null){
       this.phoneMessage = "Please enter valid phone number";
       return false;
     }else{
@@ -168,9 +168,17 @@ export class DetailInformationComponent implements OnInit {
     }
   }
 
-  zipCodeValidate(num){
+  confirmEmailValidate(){
+    if(this.emailValue != this.confirmEmailValue){
+      return false;
+    }else{
+      return true;
+    }
+  }
 
-    if(num > 99999 || num != 0){
+  zipCodeValidate(number){
+
+    if(number > 99999 || number == null){
       this.zipCodeMessage = "Please enter valid zip code";
       return false;
     }else{
@@ -184,6 +192,7 @@ export class DetailInformationComponent implements OnInit {
        this.nameValidate(this.lastNameValue,true)&&
         this.phoneValidate(this.phoneValue) &&
         this.emailValidate()&& 
+        this.confirmEmailValidate()&&
         this.selectedCountry != null &&
         this.selectedState != null &&
         this.cityValue.length > 0 &&

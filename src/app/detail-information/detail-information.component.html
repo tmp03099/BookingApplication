@@ -124,13 +124,10 @@
                             type="text"  pInputText
                             [(ngModel)]="confirmEmailValue"
                             [required] = "true">
-                    <div [hidden]="emailValidate()"
+                    <div [hidden]="confirmEmailValidate()"
                             class="alert alert-danger">
+                            Confirm Email is not match with your email
                     </div>
-                    <div [hidden]="confirmEmailValue === emailValue"
-                        class="alert alert-danger">
-                        Confirm Email is not match with your email
-                </div>
                 </div>
             </div>
             <div class="col-12 lg:col-6 flex flex-column justify-content-center reservation-form">
@@ -157,7 +154,7 @@
                                 optionLabel="name"
                                 [required] = "true">
                     </p-dropdown>
-                    <div [hidden]="selectedState === null"
+                    <div [hidden]="selectedState != null"
                             class="alert alert-danger">
                             State is required
                     </div>
@@ -190,7 +187,7 @@
                             type="number"  pInputText
                             [(ngModel)]="zipCodeValue"
                             [required] = "true">
-                    <div [hidden]="zipCodeValidate(this.zipCodeValue)"
+                    <div [hidden]="zipCodeValidate(zipCodeValue)"
                             class="alert alert-danger">
                             {{zipCodeMessage}}
                     </div>
