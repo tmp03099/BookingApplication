@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -35,12 +36,15 @@ export class DetailInformationComponent implements OnInit {
   lastNameValue: String = "";
   emailValue: String = "";
   confirmEmailValue: String = "";
-  phoneValue: String = "";
+  phoneValue: number;
   cityValue: String = "";
   addressValue: String = "";
-  zipCodeValue: String = "";
+  zipCodeValue: number;
   
   firstNameMessage: String;
+  lastNameMessage: String;
+  phoneMessage: String;
+  zipCodeMessage: String;
   
   select = {};
 
@@ -122,60 +126,78 @@ export class DetailInformationComponent implements OnInit {
 
   async onSubmit(){
 
-    if(this.nameValidate(this.firstNameValue) == true){
-      if(this.phoneValue.length > 0){
-        if(this.emailValidate()==true){
-          if(this.selectedState != null){
-            if(this.selectedCountry != null){
-              if(this.cityValue.length >0){
-                if(this.addressValue.length > 0){
-                  if(this.zipCodeValue.length>0){
-                    this.submitted = true;
-                    await this.router.navigate(['../confirm'],{
-                      relativeTo: this.route
-                    });
-                    console.log(1);
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }else{
-      this.submitted = false;
-      console.log(2);
-    }
     
     
   }
 
-  nameValidate(string){
+  nameValidate(str, isLastName: Boolean){
     const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     
-    if(this.firstNameValue.length<6){
-      this.firstNameMessage="First name is required";
+    if(str.length===0){
       return false;
     }
-    if(format.test(string)){
-      this.firstNameMessage="Please enter valid first name  ";
+    if(format.test(str)){
+      if(isLastName){
+        this.lastNameMessage="Please enter valid Last Name";
+      }else{
+        this.firstNameMessage="Please enter valid First Name";
+      }
+     
       return false;
     }
-    if(this.lastNameValue.length<6){
-      return false;
-    }
-  
+
     return true;
   }
 
-  emailValidate(){    
-    if(this.emailValue.indexOf("@") == -1){
+  phoneValidate(num){
+
+    if(num > 999999999999999 || num === 0){
+      this.phoneMessage = "Please enter valid phone number";
       return false;
     }else{
       return true;
     }
   }
 
+  emailValidate(){    
+    if(this.emailValue.indexOf("@") == -1){
+      
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+  zipCodeValidate(num){
+
+    if(num > 99999 || num != 0){
+      this.zipCodeMessage = "Please enter valid zip code";
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+  disableSubmitButton() {
+
+    if (this.nameValidate(this.firstNameValue,false)&& 
+       this.nameValidate(this.lastNameValue,true)&&
+        this.phoneValidate(this.phoneValue) &&
+        this.emailValidate()&& 
+        this.selectedCountry != null &&
+        this.selectedState != null &&
+        this.cityValue.length > 0 &&
+        this.addressValue.length > 0 &&
+        this.zipCodeValidate(this.zipCodeValue)
+      ){
+      return false;
+    }                                                              
+    return true;
+
+
+
+
+  }
  
 
 

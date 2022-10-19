@@ -80,7 +80,7 @@
                             type="text"  pInputText
                             [(ngModel)]="firstNameValue"
                             [required] = "true">
-                    <div [hidden]="nameValidate(firstNameValue)"
+                    <div [hidden]="nameValidate(firstNameValue,false)"
                             class="alert alert-danger">
                             {{firstNameMessage}}
                     </div>
@@ -91,20 +91,20 @@
                             type="text"  pInputText
                             [(ngModel)]="lastNameValue"
                             [required] = "true">
-                    <div [hidden]="nameValidate(lastNameValue)"
+                    <div [hidden]="nameValidate(lastNameValue,true)"
                             class="alert alert-danger">
-                            Last Name is required
+                            {{lastNameMessage}}
                     </div>
                 </div>
                 <div class="input-form">
                     <label for="phone">PHONE*</label>
                     <input class="form-control" id="phone"
-                            type="text"  pInputText
+                            type="number"  pInputText
                             [(ngModel)]="phoneValue"
                             [required] = "true">
-                    <div [hidden]="phoneValue.length > 0"
+                    <div [hidden]="phoneValidate(phoneValue)"
                             class="alert alert-danger">
-                            Last Name is required
+                            {{phoneMessage}}
                     </div>
                 </div>
                 <div class="input-form">
@@ -115,7 +115,7 @@
                             [required] = "true">
                     <div [hidden]="emailValidate()"
                             class="alert alert-danger">
-                            Please enter valid Email
+                            Please enter a valid Email
                     </div>
                 </div>
                 <div class="input-form">
@@ -126,7 +126,6 @@
                             [required] = "true">
                     <div [hidden]="emailValidate()"
                             class="alert alert-danger">
-                            Confirm Email is required
                     </div>
                     <div [hidden]="confirmEmailValue === emailValue"
                         class="alert alert-danger">
@@ -188,19 +187,19 @@
                 <div class="input-form">
                     <label for="zipcode">ZIP CODE *</label>
                     <input class="form-control" id="title"
-                            type="text"  pInputText
+                            type="number"  pInputText
                             [(ngModel)]="zipCodeValue"
                             [required] = "true">
-                    <div [hidden]="zipCodeValue.length > 0"
+                    <div [hidden]="zipCodeValidate(this.zipCodeValue)"
                             class="alert alert-danger">
-                            Zip code is required
+                            {{zipCodeMessage}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-12 text-center">
             <p-button type="button"
-                      [disabled] = "submitted"
+                      [disabled] = "disableSubmitButton()"
                      (click)="onSubmit()"
                     >SUBMIT
             </p-button>
