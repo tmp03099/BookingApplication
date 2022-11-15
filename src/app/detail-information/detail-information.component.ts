@@ -123,10 +123,12 @@ export class DetailInformationComponent implements OnInit {
     
   }
 
-
+  //clicked submit to go confimation page
   async onSubmit(){
+    await this.router.navigate(['../confirm'],{
+      relativeTo: this.route
 
-    
+    })
     
   }
 
@@ -202,9 +204,6 @@ export class DetailInformationComponent implements OnInit {
       return false;
     }                                                              
     return true;
-
-
-
 
   }
  

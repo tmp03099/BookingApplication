@@ -8,27 +8,43 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ConfirmationPageComponent implements OnInit {
 
-  cardHolder: String;
-
-  cardNumber: String;
-
   year: Date;
 
   month: Date;
   
   cvv: number;
-
-  creditForm: FormGroup;
+  profileForm: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
 
+    this.profileForm = new FormGroup({
+      cardHolder: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      cardNumber: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10)
+      ])
+    })
+
+  }
+
+  get cardHolder() { 
+    return this.profileForm.get('cardholder');
+  }
+
+  get cardNumber(){
+    return this.profileForm.get('cardnumber');
   }
 
   onSubmit(){
 
   }
+
+ 
 
   
 

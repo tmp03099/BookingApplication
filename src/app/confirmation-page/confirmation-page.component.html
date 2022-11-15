@@ -2,28 +2,46 @@
     <div class="col-12 flex justify-content-center">
         <h2>PAYMENT DETAIL</h2>
     </div>
-    <form [formGroup]="creditForm" (ngSubmit)="onSubmit()" class="justify-content-center">
-        <div>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="justify-content-center">
+        
+        <div class="flex flex-column">
+            <label for="card-holder">CARD HOLDER *</label>   
+            <input id="card-holder" type="text" formControlName="cardHolder">     
+        </div>
+        <div *ngIf="cardHolder?.invalid && (cardHolder.dirty || cardHolder.touched)"
+        class="alert">
+
+            <div *ngIf="cardHolder.errors?.['required']">
+                Card Holder is required
+            </div>
+
+        </div>
+
+        <div class="flex flex-column">
+            <label for="card-number">CARD NUMBER *</label>   
+            <input id="card-number" type="number" formControlName="cardNumber">     
+        </div>
+
+        <!-- <div>
             <label for="card-holder">CARD HOLDER *</label>
             <div>
                 <input class="form-control"
                         type="text"
                         [required] = "true"
-                        formControlName="name"
-                        [(ngModel)] = "cardHolder">
+                        [(ngModel)]="cardHolder"
+                        >
             </div>
-            <div [hidden]="cardHolder.length>0"
+            <div [hidden]="cardHolder?.length>0"
                 class="alert alert-danger">
                 Zip code is required
             </div>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <label for="card-number">CARD NUMBER *</label>
             <div>
                 <input class="form-control"
                         type="text"
                         [required] = "true"
-                        formControlName="name"
                         [(ngModel)] = "cardNumber">
             </div>
             <div [hidden]="cardNumber.length>0"
@@ -38,7 +56,6 @@
                     <input class="form-control"
                             type="text"
                             [required] = "true"
-                            formControlName="name"
                             >
                 </div>
                 <div [hidden]=""
@@ -53,7 +70,6 @@
                     <input class="form-control"
                             type="text"
                             [required] = "true"
-                            formControlName="name"
                             >
                 </div>
                 <div [hidden]=""
@@ -67,7 +83,6 @@
                     <input class="form-control"
                             type="text"
                             [required] = "true"
-                            formControlName="name"
                             >
                 </div>
                 <div [hidden]="cvv>3"
@@ -75,9 +90,8 @@
                     Zip code is required
                 </div>
             </div>
-        </div>
-        <p-button type="button"
-                [disabled]="!creditForm.valid"
+        </div> -->
+        <p-button type="submit" [disabled]="!profileForm.valid"
                 (click)="onSubmit()">
             SUBMIT
         </p-button>
