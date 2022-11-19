@@ -2,25 +2,61 @@
     <div class="col-12 flex justify-content-center">
         <h2>PAYMENT DETAIL</h2>
     </div>
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="justify-content-center">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="col-8 justify-content-center">
         
-        <div class="flex flex-column">
+        <div class="flex flex-column justify-content-center">
             <label for="card-holder">CARD HOLDER *</label>   
-            <input id="card-holder" type="text" formControlName="cardHolder">     
+            <input  type="text" pInputText id="card-holder" formControlName="cardHolder">     
         </div>
-        <div *ngIf="cardHolder?.invalid && (cardHolder.dirty || cardHolder.touched)"
-        class="alert">
-
-            <div *ngIf="cardHolder.errors?.['required']">
+        <div *ngIf="cardHolderControl?.invalid && (cardHolderControl.dirty || cardHolderControl.touched)"
+        class="alert alert-danger">
+            <div *ngIf="cardHolderControl.errors?.['required']">
                 Card Holder is required
             </div>
 
         </div>
 
-        <div class="flex flex-column">
+        <div class="flex flex-column justify-content-center">
             <label for="card-number">CARD NUMBER *</label>   
-            <input id="card-number" type="number" formControlName="cardNumber">     
+            <input type="text" pInputText id="card-number" formControlName="cardNumber">     
         </div>
+        <div *ngIf="cardNumberControl?.invalid && (cardNumberControl.dirty || cardNumberControl.touched)"
+        class="alert alert-danger">
+            <div *ngIf="cardNumberControl.errors?.['required']">
+                Card Number is required
+            </div>
+            <div *ngIf="cardNumberControl.errors?.['minlength']">
+                Card Number must be at least 12 number
+            </div>
+        </div>
+
+        <div class="flex gap-3">
+            <div class="flex flex-column ">
+                <label for="month">MONTH *</label>
+                <input type="text" pInputText id="month" formControlName="monthOfCard">
+            </div>
+            <div *ngIf="">
+    
+            </div>
+    
+            <div class="flex flex-column">
+                <label for="year">YEAR *</label>
+                <input type="text" pInputText id="year" formControlName="yearOfCard">
+            </div>
+            <div *ngIf="">
+                
+            </div>
+    
+            <div class="flex flex-column">
+                <label for="cvv">CVV *</label>
+                <input type="text" pInputText id="cvv" formControlName="cvvOfCard">
+            </div>
+            <div *ngIf="">
+                
+            </div>
+        </div>
+
+
 
         <!-- <div>
             <label for="card-holder">CARD HOLDER *</label>

@@ -29,6 +29,7 @@ import { SearchingPageComponent } from './searching-page/searching-page.componen
 import {DropdownModule} from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ConfirmationPageComponent } from './confirmation-page/confirmation-page
     ConfirmationPageComponent
   ],
   imports: [
+    InputTextModule,
     ReactiveFormsModule,
     DropdownModule,
     StepsModule,

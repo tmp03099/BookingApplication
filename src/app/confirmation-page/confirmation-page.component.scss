@@ -1,6 +1,9 @@
-.form-control{
-    width: 300px;
-    height: 46.22px;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
 }
+  
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+  

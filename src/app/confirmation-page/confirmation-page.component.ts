@@ -21,23 +21,45 @@ export class ConfirmationPageComponent implements OnInit {
 
     this.profileForm = new FormGroup({
       cardHolder: new FormControl('', [
-        Validators.required,
-        Validators.minLength(4)
+        Validators.required
       ]),
       cardNumber: new FormControl('', [
         Validators.required,
-        Validators.minLength(10)
+        Validators.minLength(12)
+      ]),
+      monthOfCard: new FormControl('', [
+        Validators.required
+      ]),
+      yearOfCard: new FormControl('',[
+        Validators.required
+      ]),
+      cvvOfCard: new FormControl('', [
+        Validators.required
       ])
-    })
+
+    });
 
   }
 
-  get cardHolder() { 
-    return this.profileForm.get('cardholder');
+  //get info from profileForm
+  get cardHolderControl() { 
+    return this.profileForm.get('cardHolder');
   }
 
-  get cardNumber(){
-    return this.profileForm.get('cardnumber');
+  get cardNumberControl(){
+    return this.profileForm.get('cardNumber');
+  }
+
+  get yearControl(){
+    return this.profileForm.get('yearOfCard');
+  }
+
+  get monthControl(){
+    return this.profileForm.get('monthOfCard');
+  }
+
+  get cvvControl(){
+    return this.profileForm.get('cvvOfCard');
   }
 
   onSubmit(){
