@@ -8,12 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ConfirmationPageComponent implements OnInit {
 
-  year: Date;
+  expired: String;
 
-  month: Date;
-  
-  cvv: number;
   profileForm: FormGroup;
+
+
 
   constructor() { }
 
@@ -27,14 +26,12 @@ export class ConfirmationPageComponent implements OnInit {
         Validators.required,
         Validators.minLength(12)
       ]),
-      monthOfCard: new FormControl('', [
-        Validators.required
-      ]),
-      yearOfCard: new FormControl('',[
+      expiredDate: new FormControl('', [
         Validators.required
       ]),
       cvvOfCard: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.maxLength(4)
       ])
 
     });
@@ -50,12 +47,8 @@ export class ConfirmationPageComponent implements OnInit {
     return this.profileForm.get('cardNumber');
   }
 
-  get yearControl(){
+  get dateControl(){
     return this.profileForm.get('yearOfCard');
-  }
-
-  get monthControl(){
-    return this.profileForm.get('monthOfCard');
   }
 
   get cvvControl(){

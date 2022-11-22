@@ -30,6 +30,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule} from 'primeng/inputmask';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ConfirmationPageComponent
   ],
   imports: [
+    InputMaskModule,
     InputTextModule,
     ReactiveFormsModule,
     DropdownModule,

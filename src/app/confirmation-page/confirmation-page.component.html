@@ -1,8 +1,8 @@
 <div class="grid info-form justify-content-center">
     <div class="col-12 flex justify-content-center">
-        <h2>PAYMENT DETAIL</h2>
+        <h1>PAYMENT DETAIL</h1>
     </div>
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="col-8 flex justify-content-center">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="col-12 md:col-8 flex justify-content-center">
         <div class="flex flex-column payment-form justify-content-center">
             <div class="flex flex-column justify-content-center">
                 <label for="card-holder">NAME OF CARD *</label>   
@@ -10,7 +10,7 @@
                 <div *ngIf="cardHolderControl?.invalid && (cardHolderControl.dirty || cardHolderControl.touched)"
                 class="alert alert-danger">
                     <div *ngIf="cardHolderControl.errors?.['required']">
-                        <small>Card Holder is required</small>
+                        <small>Name of card is required</small>
                     </div>
         
                 </div>
@@ -22,7 +22,7 @@
                 <div *ngIf="cardNumberControl?.invalid && (cardNumberControl.dirty || cardNumberControl.touched)"
                 class="alert alert-danger">
                     <div *ngIf="cardNumberControl.errors?.['required']">
-                        <small>Card Number is required</small>
+                        <small>Card number is required</small>
                     </div>
                     <div *ngIf="cardNumberControl.errors?.['minlength']">
                         Card Number must be at least 12 number
@@ -30,28 +30,29 @@
                 </div>
             </div>
     
-            <div class="flex gap-3">
+            <div class="flex gap-3 lg:gap-8">
                 <div class="flex flex-column ">
-                    <label for="month">MONTH *</label>
-                    <input type="text" pInputText id="month" formControlName="monthOfCard">
-                    <div *ngIf="">
-            
+                    <label for="month">EXPIRED DATE *</label>
+                    <p-inputMask [(ngModel)]="expired" mask="99/9999" placeholder="MM/YYYY"
+                                formControlName="expiredDate" >
+                    </p-inputMask>
+                    <div *ngIf="dateControl?.invalid && ( dateControl.dirty || dateControl.touched)" class="alert alert-danger">
+                        <div *ngIf="dateControl.errors?.['required']">
+                            <small> Expired date is required</small>
+                        </div>
                     </div>
                 </div>
-        
-                <div class="flex flex-column">
-                    <label for="year">YEAR *</label>
-                    <input type="text" pInputText id="year" formControlName="yearOfCard">
-                    <div *ngIf="">
-                        
-                    </div>
-                </div>
-        
+
                 <div class="flex flex-column">
                     <label for="cvv">CVV *</label>
                     <input type="text" pInputText id="cvv" formControlName="cvvOfCard">
-                    <div *ngIf="">
-                        
+                    <div *ngIf="cvvControl?.invalid && ( cvvControl.dirty || cvvControl.touched)" class="alert alert-danger">
+                        <div *ngIf="cvvControl.errors?.['required']">
+                            <small> CVV is required</small>
+                        </div>
+                        <div *ngIf="cvvControl.errors?.['maxlength']">
+                            <small> CVV must be 3 or 4 number</small>
+                        </div>
                     </div>
                 </div>
             </div>

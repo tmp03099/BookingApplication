@@ -1,9 +1,45 @@
 
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+input.ng-valid[required], .ng-valid.required  {
+    border: 1px solid #42A948; /* green */
 }
   
-.ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+input.ng-invalid:not(form)  {
+    &.ng-touched{
+        border: 2px solid #a94442; /* red */
+    }
 }
+
+input{
+    width:100%;
+    margin-bottom: 1rem;
+}
+
+::ng-deep .p-inputtext{
+    width:100%;
+}
+
+.alert div {
+    color: #820000;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+label{
+    padding-bottom: 0.2rem;
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+@media screen and (min-width: 1080px){
+
+    input{
+        width:120%;
+    }
+
+    ::ng-deep .p-inputtext{
+        width:120%;
+    }
   
+}
+
