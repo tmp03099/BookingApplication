@@ -4,14 +4,18 @@
     margin-top: 100px;
 }
 
-.fa-ul{
-    padding: 5px 10px 5px 10px;
+i {
+    padding-right: 1rem;
 }
+
 
 li{
     margin-left: 20px;
 }
 
+ul {
+    padding: 0px;
+}
 .app-left-header{
     font-size: 34px;
     font-family: 'Imperial Script';
@@ -30,23 +34,25 @@ li{
 }
 
 @media screen and (min-width:768px){
+
     li {
         margin-bottom: 10px;
     }
+
+    .app-right-icon{
+        margin-left: 150px;
+    }
+
 }
 
 @media screen and (min-width:992px){
 
-    .app-right-icon{
-        margin-left: 200px;
-    }
-    
     .app-center-header{
         margin-left: 50px;
     }
     
     li {
-        margin-bottom: 10px;
+        margin: 0 30px 10px 30px;
     }
 }
 
