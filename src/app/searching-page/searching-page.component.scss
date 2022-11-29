@@ -5,7 +5,7 @@
 }
 
 .ul-detail li{
-    margin: 5px 20px 5px 20px;
+    margin: 5px 15px 5px 15px;
 }
 
 .ul-detail li i{
@@ -21,16 +21,40 @@
     text-align: end;
     font-size: 1.3rem;
     font-family: sans-serif;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .info-detail{
     border: 2px solid gray;
-    padding: 5px 10px 0px 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+button{
+    font-size: small;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+}
+
+@media screen and (min-width:560px){
+
+    button{
+        font-size: larger;
+    }
+
+    li{
+        font-size: large;
+    }
+
+
 }
 
 @media screen and (min-width:768px) {
     .img-detail{
         margin: 0 30px 10px 0;
+    }
+
+    .ul-detail li{
+        margin: 5px 20px 5px 20px;
     }
     
 }

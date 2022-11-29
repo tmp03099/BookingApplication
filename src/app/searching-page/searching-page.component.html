@@ -1,6 +1,6 @@
 <div class="grid justify-content-center">
     <div class="col-12 text-center">
-        <div class="fa-solid fa-calendar-days ml-8 mr-4">
+        <div class="fa-solid fa-calendar-days md:ml-8 md:mr-4">
             <span class="ml-2">{{select["selectedStartDate"]}}</span>
             <span class="ml-4">TO</span>
             <span class="ml-4">{{select["selectedEndDate"]}}</span> 
@@ -20,16 +20,16 @@
             SELECT ROOM
         </h1>
     </div>
-    <div class="col-12 lg:flex flex-row justify-content-center" *ngFor="let detail of bookingDetail">
-        <img class="w-29rem h-16em" src={{detail.img}}>
-        <div class="info-detail">
+    <div class="col-12 md:col-8 lg:flex flex-row justify-content-center" *ngFor="let detail of bookingDetail">
+        <img class="w-29rem h-16em md:w-full lg:w-29rem h-16em" src={{detail.img}}>
+        <div class="info-detail justify-content-center">
             <div class="hotel-name">
                 {{detail.name}}
             </div>
             <div class="hotel-price">
                 ${{detail.price}}/NIGHT
             </div>
-            <div class="flex hotel-info">
+            <div class="flex hotel-info justify-content-center">
                 <ul class="ul-detail flex flex-row">
                     <li><i class="fa-solid fa-bed"></i>{{detail.kindBed}}</li>
                     <li><i class="fa-solid fa-user-group"></i>{{detail.peopleNum}}</li>
