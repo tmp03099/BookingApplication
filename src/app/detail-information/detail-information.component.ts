@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Countries } from '../interface/Countries.interface';
+import { Customer } from '../interface/Customer.interface';
+import { CustomerService } from '../Service/CustomerService';
 import { DataService } from '../Service/dataService';
 import { countries } from './country-data-store';
 import { States, states } from './state-data-store';
@@ -32,6 +34,8 @@ export class DetailInformationComponent implements OnInit {
 
   selectedState: States;
 
+  customer: Customer;
+
   firstNameValue: String = "";
   lastNameValue: String = "";
   emailValue: String = "";
@@ -56,13 +60,15 @@ export class DetailInformationComponent implements OnInit {
 
   submitted: boolean = false;
 
+ 
 
 
   constructor(
 
     private route: ActivatedRoute,
     private router: Router,
-    private detailService: DataService
+    private detailService: DataService,
+    private customerService: CustomerService
 
   ){ 
 
@@ -125,10 +131,37 @@ export class DetailInformationComponent implements OnInit {
 
   //clicked submit to go confimation page
   async onSubmit(){
+    
+    //set new object customer to save customer's information to update database
+    this.customer = {
+      sDate: this.select['selectedStartDate'],
+      eDate: this.select['selectedEndDate'],
+      peopleNum: this.storeValue.peopleNum,
+      bed: this.select['selectedRoom'],
+      kindRoom: this.storeValue.kindBed,
+      firstname: this.firstNameValue,
+      lastname: this.lastNameValue,
+      phone: this.phoneValue,
+      email: this.emailValue,
+      country: this.selectedCountry,
+      state: this.selectedState,
+      city: this.cityValue,
+      address: this.addressValue,
+      zipcode: this.zipCodeValue,
+      cardName: '',
+      cardNum:'',
+      cardExpire: '',
+      securityCode:''
+    }
+
+    //save customer object with customer's information to Customer Service
+    this.customerService.saveCustomer(this.customer);
+
+    console.log(this.customer);
     await this.router.navigate(['../confirm'],{
       relativeTo: this.route
-
     })
+    
     
   }
 
@@ -206,6 +239,10 @@ export class DetailInformationComponent implements OnInit {
     return true;
 
   }
+
+  
+
+
  
 
 

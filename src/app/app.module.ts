@@ -31,6 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule} from 'primeng/inputmask';
+import {MessagesModule} from 'primeng/messages';
+
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { InputMaskModule} from 'primeng/inputmask';
     ConfirmationPageComponent
   ],
   imports: [
+
+    MessagesModule,
     InputMaskModule,
     InputTextModule,
     ReactiveFormsModule,

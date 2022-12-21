@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Message, MessageService } from 'primeng/api';
+import { CustomerService } from '../Service/CustomerService';
+import { Customer } from '../interface/Customer.interface';
 
 @Component({
   selector: 'app-confirmation-page',
@@ -12,9 +15,13 @@ export class ConfirmationPageComponent implements OnInit {
 
   profileForm: FormGroup;
 
+  msgs: Message[];
 
+  paymentInfo: Customer;
 
-  constructor() { }
+  constructor(
+    private customerService: CustomerService
+  ){ }
 
   ngOnInit(): void {
 
@@ -31,10 +38,13 @@ export class ConfirmationPageComponent implements OnInit {
       ]),
       cvvOfCard: new FormControl('', [
         Validators.required,
+        Validators.minLength(3),
         Validators.maxLength(4)
       ])
 
     });
+
+    
 
   }
 
@@ -55,14 +65,32 @@ export class ConfirmationPageComponent implements OnInit {
     return this.profileForm.get('cvvOfCard');
   }
 
+  
+
   onSubmit(){
 
-  }
+    //get customer information from customer service to update payment information
+    this.customerService.getCustomer();
 
- 
+    
+    console.log(this.customerService.getCustomer());
 
+
+     
+
+    //set up message for submit button
+    this.msgs = [
+      {severity:'success', summary:'Success', detail:'YOUR INFORMATION SUCCESSFULLY SUBMITTED'}
+    ]
   
+    this.profileForm.reset();
+
+
+
+  }
 
 
 
 }
+
+
