@@ -8,6 +8,8 @@ import { CustomerService } from '../Service/CustomerService';
 import { DataService } from '../Service/dataService';
 import { countries } from './country-data-store';
 import { States, states } from './state-data-store';
+import { CartService } from '../cart.service';
+import { HotelDetail } from '../interface/HotelDetail.interface';
 
 @Component({
   selector: 'app-detail-information',
@@ -68,7 +70,8 @@ export class DetailInformationComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private detailService: DataService,
-    private customerService: CustomerService
+    private customerService: CustomerService,
+    private cartService: CartService
 
   ){ 
 
@@ -239,6 +242,10 @@ export class DetailInformationComponent implements OnInit {
     return true;
 
   }
+
+
+
+  
 
   
 

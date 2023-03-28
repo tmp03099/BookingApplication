@@ -76,16 +76,12 @@ export class ConfirmationPageComponent implements OnInit {
     console.log(this.customerService.getCustomer());
 
 
-     
-
     //set up message for submit button
     this.msgs = [
       {severity:'success', summary:'Success', detail:'YOUR INFORMATION SUCCESSFULLY SUBMITTED'}
     ]
   
     this.profileForm.reset();
-
-
 
   }
 
